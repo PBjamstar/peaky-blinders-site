@@ -111,6 +111,115 @@
   </style>
 </head>
 <body>
-  <!-- Body content -->
+  <div class="overlay">
+    <header>
+      <img class="logo" src="assets/logo.png" alt="PB Logo" />
+      <h1>Peaky Blinders CNR Crew</h1>
+      <p>Friendly, fun, and respectful — join the PB legacy.</p>
+      <a class="btn" href="https://discord.gg/cnrpeakyblinders" target="_blank">Join Discord</a>
+    </header>
+
+    <nav>
+      <a href="#gallery">Gallery</a>
+      <a href="#rules">Rules</a>
+      <a href="#ranks">Ranks</a>
+      <a href="#about">About</a>
+      <a href="#timeline">Timeline</a>
+    </nav>
+
+    <iframe src="https://discord.com/widget?id=1206571308456878100&theme=dark" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+
+    <section id="player-stats">
+      <h2>Live FiveM Server Stats</h2>
+      <ul id="fivem-stats">Loading player data...</ul>
+    </section>
+
+    <section id="about">
+      <h2>About Us</h2>
+      <p>The Peaky Blinders CNR crew was founded with one goal: to dominate the streets of FiveM with style, respect, and brotherhood. We value teamwork, loyalty, and top-tier roleplay. Whether you're a seasoned veteran or a new recruit, if you wear the PB tag — you're family.</p>
+    </section>
+
+    <section id="timeline">
+      <h2>Interactive Crew Timeline</h2>
+      <div class="timeline">
+        <div><strong>2024:</strong> PB Crew founded and began growing in CNR servers.</div>
+        <div><strong>2025:</strong> Reached 500+ members. Became one of the top respected crews.</div>
+        <div><strong>Mid-2025:</strong> Launched website, new media campaign, and gallery system.</div>
+        <div><strong>Future:</strong> Major expansion, event hosting, and strategic alliances.</div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Gallery</h2>
+      <div class="gallery">
+        <img src="assets/sample1.jpg" alt="Screenshot 1" />
+        <img src="assets/sample2.jpg" alt="Screenshot 2" />
+        <img src="assets/sample3.jpg" alt="Screenshot 3" />
+      </div>
+    </section>
+
+    <section id="rules">
+      <h2>Rules</h2>
+      <p><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No toxic behavior, threats, or drama.</p>
+      <p><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-clanning is not allowed.</p>
+      <p><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to removal.</p>
+      <p><strong>Gameplay:</strong> Follow all CNR rules. No cheating or exploiting.</p>
+      <p><strong>Voice:</strong> Use correct channels, avoid spam, and stay organized during events.</p>
+      <p><strong>Identity:</strong> Use PB tags and represent the crew properly.</p>
+      <p><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.</p>
+      <p><strong>Age Requirement:</strong> You must meet the minimum age set by PB admins (16+ or 18+).</p>
+      <p><strong>Name & Tag Usage:</strong> Use crew tags properly. Misuse leads to action.</p>
+      <p><strong>Final Word:</strong> PB leadership has the final say. Terms can change anytime.</p>
+    </section>
+
+    <section id="ranks">
+      <h2>Ranks</h2>
+      <ul>
+        <li><strong>Leaders:</strong> @P-B | jamstar, @P-B | TheFrup!</li>
+        <li><strong>Co-Leader:</strong> @P-B | Dynamix</li>
+        <li><strong>Bosses:</strong> @P-B | Artjom471, @P-B | WolficekCZ, @P-B | Squ4ty</li>
+        <li><strong>Head of Recruitment:</strong> @P-B | Squ4ty</li>
+        <li><strong>Recruiters:</strong> @P-B | Areebo, @P-B | 9gzks, @P-B | sosyedidi, @P-B | Peanut, @P-B | Bamboleczekk</li>
+      </ul>
+    </section>
+
+    <footer>
+      &copy; 2025 Peaky Blinders Crew. All rights reserved.
+    </footer>
+  </div>
+  <script>
+    const sections = document.querySelectorAll('section');
+    const revealOnScroll = () => {
+      const triggerBottom = window.innerHeight * 0.85;
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < triggerBottom) {
+          section.classList.add('visible');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Fetch player data from CNR API
+    fetch('https://api.gtacnr.net/cnr/players?serverId=EU1')
+      .then(response => response.json())
+      .then(data => {
+        const list = document.getElementById('fivem-stats');
+        list.innerHTML = '';
+        if (Array.isArray(data.players)) {
+          data.players.forEach(player => {
+            const li = document.createElement('li');
+            li.textContent = `${player.name} (${player.playTime} mins)`;
+            list.appendChild(li);
+          });
+        } else {
+          list.textContent = 'No player data available.';
+        }
+      })
+      .catch(err => {
+        document.getElementById('fivem-stats').textContent = 'Error fetching server data.';
+      });
+  </script>
 </body>
 </html>
