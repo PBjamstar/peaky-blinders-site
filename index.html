@@ -1,215 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Peaky Blinders CNR Crew</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: url('assets/background.jpg') no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
-    .overlay {
-      background-color: rgba(0, 0, 0, 0.8);
-      padding: 2rem;
-      min-height: 100vh;
-    }
-    header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-    p {
-      font-size: 1.2rem;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: #b30000;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      border-radius: 8px;
-      margin-top: 1rem;
-      animation: pulse 2s infinite;
-    }
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.1); }
-      100% { transform: scale(1); }
-    }
-    nav {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-    .gallery img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-    iframe {
-      margin-top: 2rem;
-      border: none;
-      width: 100%;
-      height: 400px;
-    }
-    section {
-      margin-top: 3rem;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    .logo {
-      width: 150px;
-      margin-bottom: 1rem;
-    }
-    @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      p { font-size: 1rem; }
-      .btn { padding: 0.5rem 1rem; font-size: 0.9rem; }
-    }
-    .timeline {
-      margin-top: 2rem;
-      padding-left: 1rem;
-      border-left: 2px solid #b30000;
-    }
-    .timeline div {
-      margin-bottom: 1rem;
-    }
-    #player-stats {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 1rem;
-      border-radius: 10px;
-      margin-top: 2rem;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peaky Blinders CNR FiveM</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Roboto Condensed", sans-serif;
+            background: url("background.jpg") no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            background-color: black;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 1rem;
+            text-align: center;
+            border-bottom: 2px solid red;
+        }
+
+        header img {
+            height: 80px;
+        }
+
+        h1 {
+            color: red;
+            margin-top: 0.5rem;
+        }
+
+        .section {
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 1rem;
+            border: 2px solid red;
+            border-radius: 10px;
+        }
+
+        .discord-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: red;
+            color: white;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .discord-button:hover {
+            background-color: #ff0000cc;
+        }
+    </style>
 </head>
+
 <body>
-  <div class="overlay">
-    <header>
-      <h1>Peaky Blinders CNR Crew</h1>
-      <p>Friendly, fun, and respectful — join the PB legacy.</p>
-      <a class="btn" href="https://discord.gg/cnrpeakyblinders" target="_blank">Join Discord</a>
-    </header>
+<header>
+    <h1>Peaky Blinders - CNR FiveM</h1>
+    <p>Tag: <strong>P-B</strong></p>
+    <a href="https://discord.gg/cnrpeakyblinders" class="discord-button" target="_blank">Join our Discord</a>
+</header>
 
-    <nav>
-      <a href="#gallery">Gallery</a>
-      <a href="#rules">Rules</a>
-      <a href="#ranks">Ranks</a>
-      <a href="#about">About</a>
-      <a href="#timeline">Timeline</a>
-    </nav>
+<div class="section">
+    <h2>About the Crew</h2>
+    <p>
+        We are a respectful and fun-loving Cops & Robbers crew on FiveM EU1. Our mission is to create an enjoyable
+        experience with friendly players who support and look out for each other. Join us and become part of the Peaky
+        Blinders legacy.
+    </p>
+</div>
 
-    <iframe src="https://discord.com/widget?id=1206571308456878100&theme=dark" allowtransparency="true" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+<div class="section">
+    <h2>About Us</h2>
+    <p>
+        The Peaky Blinders CNR crew was founded with one goal: to dominate the streets of FiveM with style, respect, and
+        brotherhood. We value teamwork, loyalty, and top-tier roleplay. Whether you're a seasoned veteran or a new recruit,
+        if you wear the PB tag — you're family.
+    </p>
+</div>
 
-    <section id="player-stats">
-      <h2>Live FiveM Server Stats</h2>
-      <ul id="fivem-stats">Loading player data...</ul>
-    </section>
+<div class="section">
+    <h2>Interactive Crew Timeline</h2>
+    <ul>
+        <li><strong>2024:</strong> PB Crew founded and began growing in CNR servers.</li>
+        <li><strong>2025:</strong> Reached 150+ members. Became one of the top respected crews.</li>
+        <li><strong>Mid-2025:</strong> Launched website, new media campaign, and gallery system.</li>
+        <li><strong>Future:</strong> Major expansion, event hosting, and strategic alliances.</li>
+    </ul>
+</div>
 
-    <section id="about">
-      <h2>About Us</h2>
-      <p>The Peaky Blinders CNR crew was founded with one goal: to dominate the streets of FiveM with style, respect, and brotherhood. We value teamwork, loyalty, and top-tier roleplay. Whether you're a seasoned veteran or a new recruit, if you wear the PB tag — you're family.</p>
-    </section>
+<div class="section">
+    <h2>Discord Stats</h2>
+    <iframe
+            src="https://discord.com/widget?id=1206571308456878100&theme=dark"
+            width="100%"
+            height="300"
+            allowtransparency="true"
+            frameborder="0"
+    ></iframe>
+</div>
 
-    <section id="timeline">
-      <h2>Interactive Crew Timeline</h2>
-      <div class="timeline">
-        <div><strong>2024:</strong> PB Crew founded and began growing in CNR servers.</div>
-        <div><strong>2025:</strong> Reached 150+ members. Became one of the top respected crews.</div>
-        <div><strong>Mid-2025:</strong> Launched website, new media campaign, and gallery system.</div>
-        <div><strong>Future:</strong> Major expansion, event hosting, and strategic alliances.</div>
-      </div>
-    </section>
+<div class="section">
+    <h2>FiveM Server Stats</h2>
+    <div id="fivem-stats"></div>
+</div>
 
-    <section id="rules">
-      <h2>Rules</h2>
-      <p><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No toxic behavior, threats, or drama.</p>
-      <p><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-clanning is not allowed.</p>
-      <p><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to removal.</p>
-      <p><strong>Gameplay:</strong> Follow all CNR rules. No cheating or exploiting.</p>
-      <p><strong>Voice:</strong> Use correct channels, avoid spam, and stay organized during events.</p>
-      <p><strong>Identity:</strong> Use PB tags and represent the crew properly.</p>
-      <p><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.</p>
-      <p><strong>Age Requirement:</strong> You must meet the minimum age set by PB admins (16+ or 18+).</p>
-      <p><strong>Name & Tag Usage:</strong> Use crew tags properly. Misuse leads to action.</p>
-      <p><strong>Final Word:</strong> PB leadership has the final say. Terms can change anytime.</p>
-    </section>
+<div class="section">
+    <h2>Rules</h2>
+    <ul>
+        <li><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No toxic
+            behavior, threats, or drama.</li>
+        <li><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-clanning is not allowed.</li>
+        <li><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to removal.</li>
+        <li><strong>Gameplay:</strong> Follow all CNR rules. No cheating or exploiting.</li>
+        <li><strong>Voice:</strong> Use correct channels, avoid spam, and stay organized during events.</li>
+        <li><strong>Identity:</strong> Use PB tags and represent the crew properly.</li>
+        <li><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.</li>
+        <li><strong>Age Requirement:</strong> You must meet the minimum age set by PB admins (16+ or 18+).</li>
+        <li><strong>Name & Tag Usage:</strong> Use crew tags properly. Misuse leads to action.</li>
+        <li><strong>Final Word:</strong> PB leadership has the final say. Terms can change anytime.</li>
+    </ul>
+</div>
 
-    <section id="ranks">
-      <h2>Ranks</h2>
-      <ul>
+<div class="section">
+    <h2>Ranks</h2>
+    <ul>
+        <li><strong>Leader</strong> - Oversees all crew operations</li>
+        <li><strong>Underboss</strong> - Assists the leader and manages key operations</li>
+        <li><strong>Capo</strong> - Manages groups within the crew</li>
+        <li><strong>Soldier</strong> - Active crew member</li>
+        <li><strong>Associate</strong> - New member under evaluation</li>
+    </ul>
+    <h3>Current Members</h3>
+    <ul>
         <li><strong>Leaders:</strong> @P-B | jamstar, @P-B | TheFrup!</li>
         <li><strong>Co-Leader:</strong> @P-B | Dynamix</li>
         <li><strong>Bosses:</strong> @P-B | Artjom471, @P-B | WolficekCZ, @P-B | Squ4ty</li>
         <li><strong>Head of Recruitment:</strong> @P-B | Squ4ty</li>
         <li><strong>Recruiters:</strong> @P-B | Areebo, @P-B | 9gzks, @P-B | sosyedidi, @P-B | Peanut, @P-B | Bamboleczekk</li>
-      </ul>
-    </section>
+    </ul>
+</div>
 
-    <footer>
-      &copy; 2025 Peaky Blinders Crew. All rights reserved.
-    </footer>
-  </div>
-  <script>
-    const sections = document.querySelectorAll('section');
-    const revealOnScroll = () => {
-      const triggerBottom = window.innerHeight * 0.85;
-      sections.forEach(section => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top < triggerBottom) {
-          section.classList.add('visible');
-        }
-      });
-    };
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
+<footer>
+    <p>&copy; 2025 Peaky Blinders Crew. All rights reserved.</p>
+    <p>Site created by <strong>P-B | Jamstar</strong></p>
 
-    // Fetch player data from CNR API
-    fetch('https://api.gtacnr.net/cnr/players?serverId=EU1')
-      .then(response => response.json())
-      .then(data => {
-        const list = document.getElementById('fivem-stats');
-        list.innerHTML = '';
-        if (Array.isArray(data.players)) {
-          data.players.forEach(player => {
-            const li = document.createElement('li');
-            li.textContent = `${player.name} (${player.playTime} mins)`;
-            list.appendChild(li);
-          });
-        } else {
-          list.textContent = 'No player data available.';
-        }
-      })
-      .catch(err => {
-        document.getElementById('fivem-stats').textContent = 'Error fetching server data.';
-      });
-  </script>
+<script>
+	const serverIds = ["EU1", "EU2", "US1", "US2"];
+	const endpointBase = "https://api.gtacnr.net/cnr/players?serverId=";
+	const seaEndpoint = "https://sea.gtacnr.net/cnr/players?serverId=SEA";
+	const listElement = document.getElementById("fivem-stats");
+	const refetchingInterval = 60; // in seconds
+
+	const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+	let isFirstLoad = true;
+
+	async function fetchAllServersSequentially() {
+		const allPlayers = [];
+
+		for (const serverId of serverIds) {
+			try {
+				const response = await fetch(`${endpointBase}${serverId}`);
+				console.log(`[${serverId}] Status: ${response.status}`);
+
+				if (response.status === 429) {
+					throw new Error(`[${serverId}] Too many requests (429), try again later.`);
+				}
+
+				if (!response.ok) {
+					throw new Error(`[${serverId}] HTTP Error (${response.status})`);
+				}
+
+				const data = await response.json();
+
+				const playersPB = data
+					.filter(player => player?.Username?.Username?.startsWith("P-B"))
+					.map(player => ({
+						name: player?.Username?.Username,
+						serverId: serverId
+					}));
+
+				allPlayers.push(...playersPB);
+
+			} catch (error) {
+				console.warn(error.message);
+				allPlayers.push({ name: `⚠ ${error.message}`, serverId: serverId });
+			}
+
+			await wait(1000);
+		}
+
+		// Fetch SEA server
+		try {
+			const response = await fetch(seaEndpoint);
+			console.log(`[SEA] Status: ${response.status}`);
+
+			if (response.status === 429) {
+				throw new Error(`[SEA] Too many requests (429), try again later.`);
+			}
+
+			if (!response.ok) {
+				throw new Error(`[SEA] HTTP Error (${response.status})`);
+			}
+
+			const data = await response.json();
+
+			const playersPB = data
+				.filter(player => player?.Username?.Username?.startsWith("P-B"))
+				.map(player => ({
+					name: player?.Username?.Username,
+					serverId: "SEA"
+				}));
+
+			allPlayers.push(...playersPB);
+
+		} catch (error) {
+			console.warn(error.message);
+			allPlayers.push({ name: `⚠ ${error.message}`, serverId: "SEA" });
+		}
+
+		await wait(1000); // Respecte le délai aussi pour le serveur SEA
+
+		displaySortedPlayers(allPlayers);
+	}
+
+	function displaySortedPlayers(players) {
+		listElement.innerHTML = '';
+
+		if (players.length === 0) {
+			listElement.innerHTML = '<li>No "P-B" players found on the servers.</li>';
+			return;
+		}
+
+		// Ajoute SEA dans l'ordre pour que le tri fonctionne
+		const sortOrder = [...serverIds, "SEA"];
+
+		players.sort((a, b) => {
+			const orderA = sortOrder.indexOf(a.serverId);
+			const orderB = sortOrder.indexOf(b.serverId);
+			if (orderA !== orderB) return orderA - orderB;
+			return a.name.localeCompare(b.name, 'fr');
+		});
+
+		players.forEach(player => {
+			const li = document.createElement('li');
+			li.textContent = `${player.name} (${player.serverId})`;
+			listElement.appendChild(li);
+		});
+	}
+
+	async function startFetchingLoop() {
+		if (isFirstLoad) {
+			listElement.innerHTML = '<li>Loading P-B Members...</li>';
+		}
+
+		await fetchAllServersSequentially();
+		isFirstLoad = false;
+
+		setTimeout(startFetchingLoop, refetchingInterval * 1000);
+	}
+
+	document.addEventListener("DOMContentLoaded", () => {
+		startFetchingLoop();
+	});
+</script>
 </body>
+
 </html>
