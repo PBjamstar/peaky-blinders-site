@@ -2,10 +2,10 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Peaky Blinders CNR FiveM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
     <style>
         body {
             margin: 0;
@@ -32,27 +32,177 @@
             margin-top: 0.5rem;
         }
 
-        .section {
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.7);
+        /* Tab container */
+        .tabs {
+            display: flex;
+            background-color: rgba(0, 0, 0, 0.85);
+            border-bottom: 2px solid red;
             margin: 1rem;
-            border: 2px solid red;
-            border-radius: 10px;
+            border-radius: 10px 10px 0 0;
+            overflow-x: auto;
         }
 
+        /* Tab buttons */
+        .tab-button {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            background: transparent;
+            color: white;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .tab-button:hover,
+        .tab-button:focus {
+            background-color: #330000;
+            outline: none;
+        }
+
+        .tab-button.active {
+            border-bottom-color: red;
+            background-color: rgba(255, 0, 0, 0.15);
+            font-weight: 900;
+        }
+
+        /* Content sections */
+        .tab-content {
+            display: none;
+            padding: 2rem;
+            background-color: rgba(0, 0, 0, 0.7);
+            margin: 0 1rem 1rem 1rem;
+            border: 2px solid red;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* 3D Discord button styling */
         .discord-button {
             display: inline-block;
             padding: 1rem 2rem;
-            background-color: red;
+            background-color: #e03e3e;
             color: white;
             font-size: 1.2rem;
-            border-radius: 8px;
+            font-weight: 700;
+            border-radius: 12px;
             text-decoration: none;
-            transition: background 0.3s;
+            box-shadow: 0 6px 0 #a52b2b, /* bottom shadow for 3D depth */ 0 0 15px #ff4c4c; /* subtle glow */
+            transition: transform 0.2s ease,
+            box-shadow 0.2s ease,
+            background-color 0.3s ease;
+            user-select: none;
+            perspective: 500px;
+            transform-style: preserve-3d;
         }
 
         .discord-button:hover {
-            background-color: #ff0000cc;
+            background-color: #ff4c4c;
+            box-shadow: 0 3px 0 #a52b2b,
+            0 0 25px #ff6666;
+            transform: translateY(3px);
+        }
+
+        .discord-button:active {
+            background-color: #b73131;
+            box-shadow: none;
+            transform: translateY(6px);
+        }
+
+        /* Gallery Styles */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 1rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border: 2px solid red;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.05);
+            border-color: #ff0000cc;
+        }
+
+        /* Lightbox Modal Styles */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            max-width: 90%;
+            max-height: 80vh;
+            border: 3px solid red;
+            border-radius: 10px;
+        }
+
+        #lightbox-caption {
+            margin: 15px auto;
+            text-align: center;
+            color: #fff;
+            font-size: 1.1rem;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: #ff0000cc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+
+        /* Scrollbar for tabs if overflow */
+        .tabs::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .tabs::-webkit-scrollbar-thumb {
+            background: red;
+            border-radius: 3px;
+        }
+
+        .tabs::-webkit-scrollbar-track {
+            background: transparent;
         }
     </style>
 </head>
@@ -61,105 +211,260 @@
 <header>
     <h1>Peaky Blinders - CNR FiveM</h1>
     <p>Tag: <strong>P-B</strong></p>
-    <a href="https://discord.gg/cnrpeakyblinders" class="discord-button" target="_blank">Join our Discord</a>
+    <a href="https://discord.gg/cnrpeakyblinders" class="discord-button" target="_blank" rel="noopener noreferrer">Join
+        our Discord</a>
 </header>
 
-<div class="section">
-    <h2>About the Crew</h2>
-    <p>
-        We are a respectful and fun-loving Cops & Robbers crew on FiveM EU1. Our mission is to create an enjoyable
-        experience with friendly players who support and look out for each other. Join us and become part of the Peaky
-        Blinders legacy.
-    </p>
-</div>
+<nav class="tabs" role="tablist" aria-label="Main content tabs">
+    <button class="tab-button active" role="tab" aria-selected="true" aria-controls="tab-about" id="tab-about-btn"
+            tabindex="0">
+        About
+    </button>
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-timeline" id="tab-timeline-btn"
+            tabindex="-1">
+        Timeline
+    </button>
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-discord" id="tab-discord-btn"
+            tabindex="-1">
+        Discord Stats
+    </button>
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-fivem" id="tab-fivem-btn"
+            tabindex="-1">
+        FiveM Server Stats
+    </button>
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-rules" id="tab-rules-btn"
+            tabindex="-1">
+        Rules
+    </button>
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-ranks" id="tab-ranks-btn"
+            tabindex="-1">
+        Ranks
+    </button>
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-gallery" id="tab-gallery-btn"
+            tabindex="-1">
+        Gallery
+    </button>
+</nav>
 
-<div class="section">
-    <h2>About Us</h2>
-    <p>
-        The Peaky Blinders CNR crew was founded with one goal: to dominate the streets of FiveM with style, respect, and
-        brotherhood. We value teamwork, loyalty, and top-tier roleplay. Whether you're a seasoned veteran or a new recruit,
-        if you wear the PB tag — you're family.
-    </p>
-</div>
+<section id="tab-about" class="tab-content active" role="tabpanel" aria-labelledby="tab-about-btn" tabindex="0">
+    <div class="section">
+        <h2>About the Crew</h2>
+        <p>
+            We are a respectful and fun-loving Cops & Robbers crew on FiveM EU1. Our mission is to create an enjoyable
+            experience with friendly players who support and look out for each other. Join us and become part of the
+            Peaky
+            Blinders legacy.
+        </p>
+    </div>
 
-<div class="section">
-    <h2>Interactive Crew Timeline</h2>
-    <ul>
-        <li><strong>2024:</strong> PB Crew founded and began growing in CNR servers.</li>
-        <li><strong>2025:</strong> Reached 150+ members. Became one of the top respected crews.</li>
-        <li><strong>Mid-2025:</strong> Launched website, new media campaign, and gallery system.</li>
-        <li><strong>Future:</strong> Major expansion, event hosting, and strategic alliances.</li>
-    </ul>
-</div>
+    <div class="section">
+        <h2>About Us</h2>
+        <p>
+            The Peaky Blinders CNR crew was founded with one goal: to dominate the streets of FiveM with style, respect,
+            and
+            brotherhood. We value teamwork, loyalty, and top-tier roleplay. Whether you're a seasoned veteran or a new
+            recruit,
+            if you wear the PB tag — you're family.
+        </p>
+    </div>
+</section>
 
-<div class="section">
-    <h2>Discord Stats</h2>
-    <iframe
-            src="https://discord.com/widget?id=1206571308456878100&theme=dark"
-            width="100%"
-            height="300"
-            allowtransparency="true"
-            frameborder="0"
-    ></iframe>
-</div>
+<section id="tab-timeline" class="tab-content" role="tabpanel" aria-labelledby="tab-timeline-btn" tabindex="0">
+    <div class="section">
+        <h2>Interactive Crew Timeline</h2>
+        <ul>
+            <li><strong>2024:</strong> PB Crew founded and began growing in CNR servers.</li>
+            <li><strong>2025:</strong> Reached 150+ members. Became one of the top respected crews.</li>
+            <li><strong>Mid-2025:</strong> Launched website, new media campaign, and gallery system.</li>
+            <li><strong>Future:</strong> Major expansion, event hosting, and strategic alliances.</li>
+        </ul>
+    </div>
+</section>
 
-<div class="section">
-    <h2>FiveM Server Stats</h2>
-    <div id="fivem-stats"></div>
-</div>
+<section id="tab-discord" class="tab-content" role="tabpanel" aria-labelledby="tab-discord-btn" tabindex="0">
+    <div class="section">
+        <h2>Discord Stats</h2>
+        <iframe
+                src="https://discord.com/widget?id=1206571308456878100&theme=dark"
+                width="100%"
+                height="300"
+                allowtransparency="true"
+                frameborder="0"
+                title="Discord Server Stats"
+        ></iframe>
+    </div>
+</section>
 
-<div class="section">
-    <h2>Rules</h2>
-    <ul>
-        <li><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No toxic
-            behavior, threats, or drama.</li>
-        <li><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-clanning is not allowed.</li>
-        <li><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to removal.</li>
-        <li><strong>Gameplay:</strong> Follow all CNR rules. No cheating or exploiting.</li>
-        <li><strong>Voice:</strong> Use correct channels, avoid spam, and stay organized during events.</li>
-        <li><strong>Identity:</strong> Use PB tags and represent the crew properly.</li>
-        <li><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.</li>
-        <li><strong>Age Requirement:</strong> You must meet the minimum age set by PB admins (16+ or 18+).</li>
-        <li><strong>Name & Tag Usage:</strong> Use crew tags properly. Misuse leads to action.</li>
-        <li><strong>Final Word:</strong> PB leadership has the final say. Terms can change anytime.</li>
-    </ul>
-</div>
+<section id="tab-fivem" class="tab-content" role="tabpanel" aria-labelledby="tab-fivem-btn" tabindex="0">
+    <div class="section">
+        <h2>FiveM Server Stats</h2>
+        <div id="fivem-stats">Loading...</div>
+    </div>
+</section>
 
-<div class="section">
-    <h2>Ranks</h2>
-    <ul>
-        <li><strong>The Leader</strong> - The one who built it from the ashes. The brain of the operation, the heart of the family. Runs this crew like a razor-sharp empire. Orders flow from him—and they don’t get questioned.</li>
-        
-        <li><strong>The Co-Leader</strong> - Founding hands that helped shape the Blinders. Trusted by the Leader himself, these men lead with sharp wit, cold blood, and an eye for loyalty. Our very own Thomas Shelbys.</li>
-        
-        <li><strong>The Boss</strong> - The iron fists beneath the velvet gloves. When there’s trouble, they’re the ones who knock. They speak for the top and don’t waste time. Think of them as our Arthur Shelbys—brutal, loyal, and feared.
-</li>
-        
-        <li><strong>The Senior Capos</strong> - Whispers travel through them. They guide Caporegimes, vote in the smoke-filled backrooms, and keep the crew’s wheels turning. They hold the balance between chaos and command.</li>
-        
-        <li><strong>The Caporegimes</strong> - They bring new blood into the fold. Show them the ropes, show them the rules—and if needed, show them the door. The sharp-dressed mentors of PB, with grit under their fingernails.</li>
-        
-        <li><strong>The Lieutenants</strong> - The boots on the cobblestones. They lead by action—whether it's a job, a race, or a showdown. When things go sideways, they bring it back in line. Every street needs its enforcers.</li>
-        
-        <li><strong>The Soldiers</strong> - They’ve earned their stripes. Trusted hands, loyal hearts, and steady shots. They guide newcomers like brothers. They're the first in and the last out. The Finn Shelbys of this outfit.</li>
-        
-        <li><strong>The Associates</strong> - Fresh faces with fire in their eyes. Just stepped into the pub, still smelling of ambition. Watch, learn, earn your pint—and maybe, just maybe, you’ll rise through the smoke.</li>
-    </ul>
-    <h3>P-B Staff Members</h3>
-    <ul>
-        <li><strong>Leaders:</strong> @P-B | jamstar, @P-B | TheFrup!</li>
-        <li><strong>Co-Leader:</strong> @P-B | Dynamix</li>
-        <li><strong>Bosses:</strong> @P-B | Artjom471, @P-B | WolficekCZ, @P-B | Squ4ty</li>
-        <li><strong>Head of Recruitment:</strong> @P-B | Squ4ty</li>
-        <li><strong>Recruiters:</strong> @P-B | Areebo, @P-B | 9gzks, @P-B | sosyedidi, @P-B | Peanut, @P-B | Bamboleczekk</li>
-    </ul>
-</div>
+<section id="tab-rules" class="tab-content" role="tabpanel" aria-labelledby="tab-rules-btn" tabindex="0">
+    <div class="section">
+        <h2>PB Crew Terms and Conditions</h2>
+        <ol>
+            <li><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No
+                toxic
+                behavior, threats, or drama.
+            </li>
+            <li><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-crossing will lead to immediate
+                removal.
+            </li>
+            <li><strong>Roleplay Integrity:</strong> Maintain roleplay standards. Metagaming, exploiting, or breaking
+                immersion
+                is forbidden.
+            </li>
+            <li><strong>Communication:</strong> All official communications happen through our Discord server.</li>
+            <li><strong>Rank & Advancement:</strong> Respect the hierarchy. Rank promotions are earned through activity
+                and
+                conduct.
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section id="tab-ranks" class="tab-content" role="tabpanel" aria-labelledby="tab-ranks-btn" tabindex="0">
+    <div class="section">
+        <h2>Ranks</h2>
+        <ul>
+            <li><strong>Recruit:</strong> New members proving loyalty and skill.</li>
+            <li><strong>Soldier:</strong> Active members who follow crew rules and participate regularly.</li>
+            <li><strong>Enforcer:</strong> Trusted veterans responsible for discipline and leading small groups.</li>
+            <li><strong>Lieutenant:</strong> Commanders who strategize and lead operations.</li>
+            <li><strong>Boss:</strong> Crew leader who oversees all activities.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="tab-gallery" class="tab-content" role="tabpanel" aria-labelledby="tab-gallery-btn" tabindex="0">
+    <div class="section">
+        <h2>Gallery</h2>
+        <div class="gallery-grid" id="gallery-grid">
+            <!-- Images will be added here dynamically -->
+        </div>
+    </div>
+
+    <!-- Lightbox modal -->
+    <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <span class="close-btn" id="lightbox-close" aria-label="Close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt=""/>
+        <div id="lightbox-caption"></div>
+    </div>
+</section>
 
 <footer>
-    <p>&copy; 2025 Peaky Blinders Crew. All rights reserved.</p>
-    <p>Site created by <strong>P-B | Jamstar</strong></p>
+    &copy; 2025 Peaky Blinders Crew. All rights reserved.
+</footer>
 
 <script>
+	// Tabs script
+	const tabs = document.querySelectorAll(".tab-button");
+	const contents = document.querySelectorAll(".tab-content");
+
+	tabs.forEach((tab) => {
+		tab.addEventListener("click", () => {
+			// Remove active states
+			tabs.forEach((btn) => {
+				btn.classList.remove("active");
+				btn.setAttribute("aria-selected", "false");
+				btn.setAttribute("tabindex", "-1");
+			});
+
+			contents.forEach((content) => {
+				content.classList.remove("active");
+				content.setAttribute("tabindex", "-1");
+			});
+
+			// Activate current tab
+			tab.classList.add("active");
+			tab.setAttribute("aria-selected", "true");
+			tab.setAttribute("tabindex", "0");
+			const panelId = tab.getAttribute("aria-controls");
+			const panel = document.getElementById(panelId);
+			panel.classList.add("active");
+			panel.setAttribute("tabindex", "0");
+			panel.focus();
+		});
+	});
+
+	// Sample gallery images
+	const galleryImages = [
+		{
+			src: "https://i.imgur.com/8Km9tLL.jpg",
+			alt: "Peaky Blinders crew members",
+			caption: "Crew members at a meet-up",
+		},
+		{
+			src: "https://i.imgur.com/0k7mR8f.jpg",
+			alt: "FiveM action screenshot",
+			caption: "High-intensity roleplay action",
+		},
+		{
+			src: "https://i.imgur.com/hP2WQkA.jpg",
+			alt: "Peaky Blinders logo",
+			caption: "Our iconic crew logo",
+		},
+	];
+
+	const galleryGrid = document.getElementById("gallery-grid");
+	const lightboxModal = document.getElementById("lightbox-modal");
+	const lightboxImg = document.getElementById("lightbox-img");
+	const lightboxCaption = document.getElementById("lightbox-caption");
+	const lightboxClose = document.getElementById("lightbox-close");
+
+	// Populate gallery
+	galleryImages.forEach(({src, alt, caption}) => {
+		const img = document.createElement("img");
+		img.src = src;
+		img.alt = alt;
+		img.tabIndex = 0;
+		img.addEventListener("click", () => {
+			openLightbox(src, alt, caption);
+		});
+		img.addEventListener("keypress", (e) => {
+			if (e.key === "Enter" || e.key === " ") {
+				e.preventDefault();
+				openLightbox(src, alt, caption);
+			}
+		});
+		galleryGrid.appendChild(img);
+	});
+
+	function openLightbox(src, alt, caption) {
+		lightboxImg.src = src;
+		lightboxImg.alt = alt;
+		lightboxCaption.textContent = caption;
+		lightboxModal.style.display = "block";
+		lightboxModal.setAttribute("aria-hidden", "false");
+		lightboxClose.focus();
+	}
+
+	function closeLightbox() {
+		lightboxModal.style.display = "none";
+		lightboxModal.setAttribute("aria-hidden", "true");
+	}
+
+	lightboxClose.addEventListener("click", closeLightbox);
+	lightboxModal.addEventListener("click", (e) => {
+		if (e.target === lightboxModal) {
+			closeLightbox();
+		}
+	});
+
+	// Close on ESC key
+	document.addEventListener("keydown", (e) => {
+		if (e.key === "Escape" && lightboxModal.style.display === "block") {
+			closeLightbox();
+		}
+	});
+
+	// =============================================================
+	// =================== CNR PLAYERS REFETCHER ===================
+	// =============================================================
+
 	const serverIds = ["EU1", "EU2", "US1", "US2"];
 	const endpointBase = "https://api.gtacnr.net/cnr/players?serverId=";
 	const seaEndpoint = "https://sea.gtacnr.net/cnr/players?serverId=SEA";
@@ -199,7 +504,7 @@
 
 			} catch (error) {
 				console.warn(error.message);
-				allPlayers.push({ name: `⚠ ${error.message}`, serverId: serverId });
+				allPlayers.push({name: `⚠ ${error.message}`, serverId: serverId});
 			}
 
 			await wait(1000);
@@ -231,7 +536,7 @@
 
 		} catch (error) {
 			console.warn(error.message);
-			allPlayers.push({ name: `⚠ ${error.message}`, serverId: "SEA" });
+			allPlayers.push({name: `⚠ ${error.message}`, serverId: "SEA"});
 		}
 
 		await wait(1000); // Respecte le délai aussi pour le serveur SEA
@@ -280,3 +585,5 @@
 	});
 </script>
 </body>
+
+</html>
