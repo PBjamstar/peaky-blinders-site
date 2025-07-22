@@ -368,6 +368,42 @@
             font-size: 1.8rem;
         }
     }
+    .fivem-stats-3d {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border-radius: 16px;
+    border: 3px solid #e63946;
+    box-shadow:
+      0 8px 15px rgba(230, 57, 70, 0.4),
+      inset 0 -4px 8px #7f0000,
+      inset 0 6px 8px #ff5252,
+      0 0 25px #e63946;
+    text-align: center;
+    color: #f1f1f1;
+    font-family: 'Georgia', serif;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .fivem-stats-3d:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 10px 25px rgba(230, 57, 70, 0.6),
+      inset 0 -6px 10px #7f0000,
+      inset 0 8px 10px #ff6b6b,
+      0 0 35px #ff1f3d;
+  }
+
+  #tab-fivem h2 {
+    color: #e63946;
+    font-family: 'Georgia', serif;
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px #000;
+  }
 
     @keyframes pulse {
         0%, 100% {
@@ -705,10 +741,14 @@
 </section>
 
 <section id="tab-fivem" class="tab-content" role="tabpanel" aria-labelledby="tab-fivem-btn" tabindex="0">
-    <div class="section">
-        <h2>FiveM Server Stats</h2>
-        <div id="fivem-stats"></div>
+    <div class="section" style="text-align: center;">
+    <h2>FiveM Server Stats</h2>
+    <div class="fivem-stats-3d">
+      <div id="fivem-stats">
+        <!-- Your dynamic stats script will inject here -->
+      </div>
     </div>
+  </div>
 </section>
 
 <section id="tab-rules" class="tab-content" role="tabpanel" aria-labelledby="tab-rules-btn" tabindex="0">
@@ -836,20 +876,7 @@
 	// Sample gallery images
 	const galleryImages = [
 		{
-			src: "https://i.imgur.com/8Km9tLL.jpg",
-			alt: "Peaky Blinders crew members",
-			caption: "Crew members at a meet-up",
-		},
-		{
-			src: "https://i.imgur.com/0k7mR8f.jpg",
-			alt: "FiveM action screenshot",
-			caption: "High-intensity roleplay action",
-		},
-		{
-			src: "https://i.imgur.com/hP2WQkA.jpg",
-			alt: "Peaky Blinders logo",
-			caption: "Our iconic crew logo",
-		},
+	 
 	];
 
 	const galleryGrid = document.getElementById("gallery-grid");
