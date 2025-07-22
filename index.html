@@ -1,268 +1,626 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<header style="text-align: center;">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Peaky Blinders - CNR FiveM</title>
-  <style>
+<header style="text-align: center; padding: 2rem 1rem; background: #0a0a0a; color: #e63946; font-family: 'Georgia', serif; text-shadow: 1px 1px 3px #7f0000;">
+
+    <a href="index.html" style="display: inline-block; margin-bottom: 1rem;">
+        <img
+                src="https://i.imgur.com/jLtGADW.png"
+                alt="Peaky Blinders Logo"
+                style="
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        border: 3px solid red;
+        animation: pulse 2s infinite ease-in-out;
+        box-shadow: 0 0 15px #e63946;
+      "
+        />
+    </a>
+
+    <h1 style="font-size: 3rem; margin-bottom: 0.2rem; letter-spacing: 4px;">PEAKY BLINDERS</h1>
+    <p style="font-size: 1.3rem; font-style: italic; letter-spacing: 2px; margin-top: 0;">
+        Born of Smoke, Steel & Shadows — The Shelby Empire
+    </p>
+
+    <a href="https://discord.gg/cnrpeakyblinders" class="discord-button" target="_blank" rel="noopener noreferrer"
+       style="display: inline-block; margin-top: 1.5rem;">
+        Join our Discord
+    </a>
+
+</header>
+
+<style>
+    .discord-widget-3d {
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 8px;
+        background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+        border-radius: 16px;
+        border: 3px solid #e63946;
+        box-shadow: 0 8px 15px rgba(230, 57, 70, 0.4),
+        inset 0 -4px 8px #7f0000,
+        inset 0 6px 8px #ff5252,
+        0 0 25px #e63946;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .discord-widget-3d:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(230, 57, 70, 0.6),
+        inset 0 -6px 10px #7f0000,
+        inset 0 8px 10px #ff6b6b,
+        0 0 35px #ff1f3d;
+    }
+
+    #tab-discord h2 {
+        color: #e63946;
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px #000;
+    }
+
+    /* Gallery container */
+    #tab-gallery {
+        background-color: #0a0a0a;
+        color: #e63946;
+        font-family: 'Georgia', serif;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+        max-width: 900px;
+        margin: 2rem auto;
+    }
+
+    /* Gallery title */
+    #tab-gallery h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #f1faee;
+        text-align: center;
+        text-shadow: 1px 1px 2px #b00000;
+    }
+
+    /* Grid layout for images */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+    }
+
+    /* Each image styling */
+    .gallery-grid img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        border: 3px solid #e63946;
+        box-shadow: 0 4px 10px rgba(230, 57, 70, 0.6),
+        inset 0 0 10px #7f0000;
+        object-fit: cover;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* Hover effect */
+    .gallery-grid img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 6px 15px rgba(230, 57, 70, 0.9),
+        inset 0 0 15px #e63946;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        #tab-gallery {
+            padding: 1rem;
+            max-width: 95%;
+        }
+
+        #tab-gallery h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+    /* About Us section container */
+    #tab-about {
+        background-color: #0a0a0a; /* Dark background */
+        color: #e63946; /* Bold red text */
+        font-family: 'Georgia', serif;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+        max-width: 700px;
+        margin: 2rem auto;
+    }
+
+    /* About Us title */
+    #tab-about h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #f1faee; /* Off-white for contrast */
+        text-align: center;
+        text-shadow: 1px 1px 2px #b00000;
+    }
+
+    /* About Us paragraph */
+    #tab-about p {
+        background-color: #1b1b1b; /* Dark gray background block */
+        padding: 1.5rem;
+        border-radius: 4px;
+        box-shadow: inset 0 0 8px #7f0000;
+        line-height: 1.6;
+        font-size: 1.1rem;
+        color: #f1faee; /* Slightly lighter text for readability */
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect on paragraph (optional) */
+    #tab-about p:hover {
+        background-color: #2f1218;
+        cursor: default;
+        box-shadow: inset 0 0 12px #e63946;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        #tab-about {
+            padding: 1rem;
+            max-width: 95%;
+        }
+
+        #tab-about h2 {
+            font-size: 1.8rem;
+        }
+
+        #tab-about p {
+            font-size: 1rem;
+        }
+    }
+
+    /* Timeline section container */
+    #tab-timeline {
+        background-color: #0a0a0a; /* Dark background */
+        color: #e63946; /* Bold red text */
+        font-family: 'Georgia', serif;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+        max-width: 700px;
+        margin: 2rem auto;
+    }
+
+    /* Timeline title */
+    #tab-timeline h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #f1faee; /* Off-white for contrast */
+        text-align: center;
+        text-shadow: 1px 1px 2px #b00000;
+    }
+
+    /* Timeline list */
+    #tab-timeline ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Each timeline event */
+    #tab-timeline li {
+        background-color: #1b1b1b; /* Dark gray */
+        border-left: 6px solid #e63946;
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+        box-shadow: inset 0 0 8px #7f0000;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    #tab-timeline li:hover {
+        background-color: #2f1218;
+        cursor: default;
+        box-shadow: inset 0 0 12px #e63946;
+    }
+
+    /* Strong emphasis (e.g. year/event titles) */
+    #tab-timeline strong {
+        color: #e63946;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-right: 0.5rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        #tab-timeline {
+            padding: 1rem;
+            max-width: 95%;
+        }
+
+        #tab-timeline h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+    #tab-rules {
+        background-color: #0a0a0a; /* Same dark background */
+        color: #e63946; /* Same bold red text */
+        font-family: 'Georgia', serif;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+        max-width: 700px;
+        margin: 2rem auto;
+    }
+
+    /* Rules section title */
+    #tab-rules h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #f1faee; /* Off-white for contrast */
+        text-align: center;
+        text-shadow: 1px 1px 2px #b00000;
+    }
+
+    /* Rules list */
+    #tab-rules ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Each rule item */
+    #tab-rules li {
+        background-color: #1b1b1b; /* Dark gray block */
+        border-left: 6px solid #e63946;
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+        box-shadow: inset 0 0 8px #7f0000;
+        transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect */
+    #tab-rules li:hover {
+        background-color: #2f1218;
+        cursor: default;
+        box-shadow: inset 0 0 12px #e63946;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        #tab-rules {
+            padding: 1rem;
+            max-width: 95%;
+        }
+
+        #tab-rules h2 {
+            font-size: 1.8rem;
+        }
+    }
+
+    #tab-ranks {
+        background-color: #0a0a0a; /* Almost black background */
+        color: #e63946; /* Bold red for main text */
+        font-family: 'Georgia', serif;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 0 15px rgba(230, 57, 70, 0.5);
+        max-width: 700px;
+        margin: 2rem auto;
+    }
+
+    /* Section title */
+    #tab-ranks h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #f1faee; /* Off-white for contrast */
+        text-align: center;
+        text-shadow: 1px 1px 2px #b00000;
+    }
+
+    /* Ranks list */
+    #tab-ranks ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Each rank item */
+    #tab-ranks li {
+        background-color: #1b1b1b; /* Dark gray for contrast */
+        border-left: 6px solid #e63946;
+        margin-bottom: 1rem;
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+        box-shadow: inset 0 0 8px #7f0000;
+    }
+
+    /* On hover highlight */
+    #tab-ranks li:hover {
+        background-color: #2f1218;
+        cursor: default;
+        box-shadow: inset 0 0 12px #e63946;
+    }
+
+    /* Strong rank titles */
+    #tab-ranks strong {
+        color: #e63946;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-right: 0.5rem;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        #tab-ranks {
+            padding: 1rem;
+            max-width: 95%;
+        }
+
+        #tab-ranks h2 {
+            font-size: 1.8rem;
+        }
+    }
+
     @keyframes pulse {
-      0% {
-        transform: scale(1);
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
-      }
-      50% {
-        transform: scale(1.07);
-        box-shadow: 0 0 25px rgba(255, 0, 0, 0.85);
-      }
-      100% {
-        transform: scale(1);
-        box-shadow: 0 0 15px rgba(255, 0, 0, 0.6);
-      }
+        0%, 100% {
+            box-shadow: 0 0 15px #e63946;
+        }
+        50% {
+            box-shadow: 0 0 30px #a71d2a;
+        }
     }
 
     .discord-button {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #7289da;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 10px;
-      transition: background-color 0.3s;
+        display: inline-flex;
+        align-items: center;
+        background: linear-gradient(145deg, #e63946, #a71d2a);
+        color: #f1faee;
+        font-family: 'Georgia', serif;
+        font-size: 1.25rem;
+        font-weight: 700;
+        padding: 0.75rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 8px 15px rgba(230, 57, 70, 0.6),
+        inset 0 -4px 8px #7f0000,
+        inset 0 6px 8px #ff5252;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+        user-select: none;
+        cursor: pointer;
+        border: 2px solid #e63946;
+        position: relative;
+        z-index: 0;
+    }
+
+    .discord-button:active {
+        transform: translateY(3px);
+        box-shadow: 0 4px 7px rgba(230, 57, 70, 0.4),
+        inset 0 4px 6px #7f0000,
+        inset 0 -6px 8px #ff5252;
     }
 
     .discord-button:hover {
-      background-color: #5b6eae;
+        box-shadow: 0 10px 20px rgba(230, 57, 70, 0.8),
+        inset 0 -5px 10px #9b0f15,
+        inset 0 7px 12px #ff6b6b;
+        transform: translateY(-2px);
+        text-shadow: 1px 1px 3px #7f0000;
     }
-  </style>
+</style>
 </head>
-<body>
-  <header style="text-align: center;">
-    <a href="index.html" style="display: inline-block; margin-bottom: 10px;">
-      <img
-        src="https://i.imgur.com/jLtGADW.png"
-        alt="Peaky Blinders Logo"
-        style="
-          height: 150px;
-          width: 150px;
-          border-radius: 50%;
-          border: 3px solid red;
-          animation: pulse 2s infinite ease-in-out;
-        "
-      />
-    </a>
-  </a>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
-    <style>
-        body {
-            margin: 0;
-            font-family: "Roboto Condensed", sans-serif;
-            background: url("background.jpg") no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            background-color: black;
-        }
 
-        header {
-            background-color: rgba(0, 0, 0, 0.85);
-            padding: 1rem;
-            text-align: center;
-            border-bottom: 2px solid red;
-        }
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
+<style>
+    body {
+        margin: 0;
+        font-family: "Roboto Condensed", sans-serif;
+        background-size: cover;
+        color: white;
+        background: black url("background.jpg") no-repeat fixed center center;
+    }
 
-        header img {
-            height: 80px;
-        }
+    header {
+        background-color: rgba(0, 0, 0, 0.85);
+        padding: 1rem;
+        text-align: center;
+        border-bottom: 2px solid red;
+    }
 
-        h1 {
-            color: red;
-            margin-top: 0.5rem;
-        }
+    header img {
+        height: 80px;
+    }
 
-        /* Tab container */
-        .tabs {
-            display: flex;
-            background-color: rgba(0, 0, 0, 0.85);
-            border-bottom: 2px solid red;
-            margin: 1rem;
-            border-radius: 10px 10px 0 0;
-            overflow-x: auto;
-        }
+    h1 {
+        color: red;
+        margin-top: 0.5rem;
+    }
 
-        /* Tab buttons */
-        .tab-button {
-            flex: 1;
-            padding: 1rem 1.5rem;
-            background: transparent;
-            color: white;
-            border: none;
-            border-bottom: 3px solid transparent;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-align: center;
-            white-space: nowrap;
-        }
+    /* Tab container */
+    .tabs {
+        display: flex;
+        background-color: rgba(0, 0, 0, 0.85);
+        border-bottom: 2px solid red;
+        margin: 1rem;
+        border-radius: 10px 10px 0 0;
+        overflow-x: auto;
+    }
 
-        .tab-button:hover,
-        .tab-button:focus {
-            background-color: #330000;
-            outline: none;
-        }
+    /* Tab buttons */
+    .tab-button {
+        flex: 1;
+        padding: 1rem 1.5rem;
+        background: transparent;
+        color: white;
+        border: none;
+        border-bottom: 3px solid transparent;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+        white-space: nowrap;
+    }
 
-        .tab-button.active {
-            border-bottom-color: red;
-            background-color: rgba(255, 0, 0, 0.15);
-            font-weight: 900;
-        }
+    .tab-button:hover,
+    .tab-button:focus {
+        background-color: #330000;
+        outline: none;
+    }
 
-        /* Content sections */
-        .tab-content {
-            display: none;
-            padding: 2rem;
-            background-color: rgba(0, 0, 0, 0.7);
-            margin: 0 1rem 1rem 1rem;
-            border: 2px solid red;
-            border-radius: 0 0 10px 10px;
-        }
+    .tab-button.active {
+        border-bottom-color: red;
+        background-color: rgba(255, 0, 0, 0.15);
+        font-weight: 900;
+    }
 
-        .tab-content.active {
-            display: block;
-        }
+    /* Content sections */
+    .tab-content {
+        display: none;
+        padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.7);
+        margin: 0 1rem 1rem 1rem;
+        border: 2px solid red;
+        border-radius: 0 0 10px 10px;
+    }
 
-        /* 3D Discord button styling */
-        .discord-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #e03e3e;
-            color: white;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-radius: 12px;
-            text-decoration: none;
-            box-shadow: 0 6px 0 #a52b2b, /* bottom shadow for 3D depth */ 0 0 15px #ff4c4c; /* subtle glow */
-            transition: transform 0.2s ease,
-            box-shadow 0.2s ease,
-            background-color 0.3s ease;
-            user-select: none;
-            perspective: 500px;
-            transform-style: preserve-3d;
-        }
+    .tab-content.active {
+        display: block;
+    }
 
-        .discord-button:hover {
-            background-color: #ff4c4c;
-            box-shadow: 0 3px 0 #a52b2b,
-            0 0 25px #ff6666;
-            transform: translateY(3px);
-        }
+    /* 3D Discord button styling */
+    .discord-button {
+        display: inline-block;
+        padding: 1rem 2rem;
+        background-color: #e03e3e;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 6px 0 #a52b2b, /* bottom shadow for 3D depth */ 0 0 15px #ff4c4c; /* subtle glow */
+        transition: transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.3s ease;
+        user-select: none;
+        perspective: 500px;
+        transform-style: preserve-3d;
+    }
 
-        .discord-button:active {
-            background-color: #b73131;
-            box-shadow: none;
-            transform: translateY(6px);
-        }
+    .discord-button:hover {
+        background-color: #ff4c4c;
+        box-shadow: 0 3px 0 #a52b2b,
+        0 0 25px #ff6666;
+        transform: translateY(3px);
+    }
 
-        /* Gallery Styles */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 10px;
-            margin-top: 1rem;
-        }
+    .discord-button:active {
+        background-color: #b73131;
+        box-shadow: none;
+        transform: translateY(6px);
+    }
 
-        .gallery-grid img {
-            width: 100%;
-            height: 150px;
-            object-fit: cover;
-            border: 2px solid red;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
+    /* Gallery Styles */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 10px;
+        margin-top: 1rem;
+    }
 
-        .gallery-grid img:hover {
-            transform: scale(1.05);
-            border-color: #ff0000cc;
-        }
+    .gallery-grid img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover;
+        border: 2px solid red;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
 
-        /* Lightbox Modal Styles */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            padding-top: 60px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.9);
-        }
+    .gallery-grid img:hover {
+        transform: scale(1.05);
+        border-color: #ff0000cc;
+    }
 
-        .lightbox-content {
-            margin: auto;
-            display: block;
-            max-width: 90%;
-            max-height: 80vh;
-            border: 3px solid red;
-            border-radius: 10px;
-        }
+    /* Lightbox Modal Styles */
+    .lightbox-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        padding-top: 60px;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.9);
+    }
 
-        #lightbox-caption {
-            margin: 15px auto;
-            text-align: center;
-            color: #fff;
-            font-size: 1.1rem;
-        }
+    .lightbox-content {
+        margin: auto;
+        display: block;
+        max-width: 90%;
+        max-height: 80vh;
+        border: 3px solid red;
+        border-radius: 10px;
+    }
 
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 35px;
-            color: white;
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            user-select: none;
-        }
+    #lightbox-caption {
+        margin: 15px auto;
+        text-align: center;
+        color: #fff;
+        font-size: 1.1rem;
+    }
 
-        .close-btn:hover,
-        .close-btn:focus {
-            color: #ff0000cc;
-        }
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: white;
+        font-size: 40px;
+        font-weight: bold;
+        cursor: pointer;
+        user-select: none;
+    }
 
-        footer {
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #ccc;
-        }
+    .close-btn:hover,
+    .close-btn:focus {
+        color: #ff0000cc;
+    }
 
-        /* Scrollbar for tabs if overflow */
-        .tabs::-webkit-scrollbar {
-            height: 6px;
-        }
+    footer {
+        text-align: center;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #ccc;
+    }
 
-        .tabs::-webkit-scrollbar-thumb {
-            background: red;
-            border-radius: 3px;
-        }
+    /* Scrollbar for tabs if overflow */
+    .tabs::-webkit-scrollbar {
+        height: 6px;
+    }
 
-        .tabs::-webkit-scrollbar-track {
-            background: transparent;
-        }
-    </style>
+    .tabs::-webkit-scrollbar-thumb {
+        background: red;
+        border-radius: 3px;
+    }
+
+    .tabs::-webkit-scrollbar-track {
+        background: transparent;
+    }
+</style>
 </head>
 
 <body>
-<header>
-    <h1>Peaky Blinders - CNR FiveM</h1>
-    <p>Tag: <strong>P-B</strong></p>
-    <a href="https://discord.gg/cnrpeakyblinders" class="discord-button" target="_blank" rel="noopener noreferrer">Join
-        our Discord</a>
-</header>
 
 <nav class="tabs" role="tablist" aria-label="Main content tabs">
     <button class="tab-button active" role="tab" aria-selected="true" aria-controls="tab-about" id="tab-about-btn"
@@ -320,7 +678,7 @@
 
 <section id="tab-timeline" class="tab-content" role="tabpanel" aria-labelledby="tab-timeline-btn" tabindex="0">
     <div class="section">
-        <h2>Interactive Crew Timeline</h2>
+        <h2>Crew Timeline</h2>
         <ul>
             <li><strong>2024:</strong> PB Crew founded and began growing in CNR servers.</li>
             <li><strong>2025:</strong> Reached 150+ members. Became one of the top respected crews.</li>
@@ -333,40 +691,45 @@
 <section id="tab-discord" class="tab-content" role="tabpanel" aria-labelledby="tab-discord-btn" tabindex="0">
     <div class="section">
         <h2>Discord Stats</h2>
-        <iframe
-                src="https://discord.com/widget?id=1206571308456878100&theme=dark"
-                width="100%"
-                height="300"
-                allowtransparency="true"
-                frameborder="0"
-                title="Discord Server Stats"
-        ></iframe>
+        <div class="discord-widget-3d">
+            <iframe
+                    src="https://discord.com/widget?id=1206571308456878100&theme=dark"
+                    width="100%"
+                    height="400"
+                    allowtransparency="true"
+                    frameborder="0"
+                    sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+            ></iframe>
+        </div>
     </div>
 </section>
 
 <section id="tab-fivem" class="tab-content" role="tabpanel" aria-labelledby="tab-fivem-btn" tabindex="0">
     <div class="section">
         <h2>FiveM Server Stats</h2>
-        <div id="fivem-stats">Loading...</div>
+        <div id="fivem-stats"></div>
     </div>
 </section>
 
 <section id="tab-rules" class="tab-content" role="tabpanel" aria-labelledby="tab-rules-btn" tabindex="0">
     <div class="section">
-        <h2>PB Crew Terms and Conditions</h2>
+        <h2>Rules</h2>
         <ol>
             <li><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No
                 toxic
                 behavior, threats, or drama.
-           <li><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-clanning is not allowed.</li>
-        <li><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to removal.</li>
-        <li><strong>Gameplay:</strong> Follow all CNR rules. No cheating or exploiting.</li>
-        <li><strong>Voice:</strong> Use correct channels, avoid spam, and stay organized during events.</li>
-        <li><strong>Identity:</strong> Use PB tags and represent the crew properly.</li>
-        <li><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.</li>
-        <li><strong>Age Requirement:</strong> You must meet the minimum age set by PB admins (16+ or 18+).</li>
-        <li><strong>Name & Tag Usage:</strong> Use crew tags properly. Misuse leads to action.</li>
-        <li><strong>Final Word:</strong> PB leadership has the final say. Terms can change anytime.</li>
+            <li><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-clanning is not allowed.</li>
+            <li><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to
+                removal.
+            </li>
+            <li><strong>Gameplay:</strong> Follow all CNR rules. No cheating or exploiting.</li>
+            <li><strong>Voice:</strong> Use correct channels, avoid spam, and stay organized during events.</li>
+            <li><strong>Identity:</strong> Use PB tags and represent the crew properly.</li>
+            <li><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.
+            </li>
+            <li><strong>Age Requirement:</strong> You must meet the minimum age set by PB admins (16+ or 18+).</li>
+            <li><strong>Name & Tag Usage:</strong> Use crew tags properly. Misuse leads to action.</li>
+            <li><strong>Final Word:</strong> PB leadership has the final say. Terms can change anytime.</li>
             <li><strong>Rank & Advancement:</strong> Respect the hierarchy. Rank promotions are earned through activity
                 and
                 conduct.
@@ -379,14 +742,36 @@
     <div class="section">
         <h2>Ranks</h2>
         <ul>
-            <li><strong>The Leader:</strong> The one who built it from the ashes. The brain of the operation, the heart of the family. Runs this crew like a razor-sharp empire. Orders flow from him—and they don’t get questioned.</li>
-            <li><strong>The Co-Leader:</strong> Founding hands that helped shape the Blinders. Trusted by the Leader himself, these men lead with sharp wit, cold blood, and an eye for loyalty. Our very own Thomas Shelbys.</li>
-            <li><strong>The Boss:</strong> The iron fists beneath the velvet gloves. When there’s trouble, they’re the ones who knock. They speak for the top and don’t waste time. Think of them as our Arthur Shelbys—brutal, loyal, and feared.</li>
-            <li><strong>The Senior Capos:</strong> Whispers travel through them. They guide Caporegimes, vote in the smoke-filled backrooms, and keep the crew’s wheels turning. They hold the balance between chaos and command.</li>
-            <li><strong>The Caporegimes:</strong> They bring new blood into the fold. Show them the ropes, show them the rules—and if needed, show them the door. The sharp-dressed mentors of PB, with grit under their fingernails.</li>
-            <li><strong>The Lieutenants:</strong> The boots on the cobblestones. They lead by action—whether it's a job, a race, or a showdown. When things go sideways, they bring it back in line. Every street needs its enforcers.</li>
-            <li><strong>The Soldiers:</strong> They’ve earned their stripes. Trusted hands, loyal hearts, and steady shots. They guide newcomers like brothers. They're the first in and the last out. The Finn Shelbys of this outfit..</li>
-            <li><strong>The Associates:</strong> Fresh faces with fire in their eyes. Just stepped into the pub, still smelling of ambition. Watch, learn, earn your pint—and maybe, just maybe, you’ll rise through the smoke.</li>
+            <li><strong>The Leader:</strong> The one who built it from the ashes. The brain of the operation, the heart
+                of the family. Runs this crew like a razor-sharp empire. Orders flow from him—and they don’t get
+                questioned.
+            </li>
+            <li><strong>The Co-Leader:</strong> Founding hands that helped shape the Blinders. Trusted by the Leader
+                himself, these men lead with sharp wit, cold blood, and an eye for loyalty. Our very own Thomas Shelbys.
+            </li>
+            <li><strong>The Boss:</strong> The iron fists beneath the velvet gloves. When there’s trouble, they’re the
+                ones who knock. They speak for the top and don’t waste time. Think of them as our Arthur Shelbys—brutal,
+                loyal, and feared.
+            </li>
+            <li><strong>The Senior Capos:</strong> Whispers travel through them. They guide Caporegimes, vote in the
+                smoke-filled backrooms, and keep the crew’s wheels turning. They hold the balance between chaos and
+                command.
+            </li>
+            <li><strong>The Caporegimes:</strong> They bring new blood into the fold. Show them the ropes, show them the
+                rules—and if needed, show them the door. The sharp-dressed mentors of PB, with grit under their
+                fingernails.
+            </li>
+            <li><strong>The Lieutenants:</strong> The boots on the cobblestones. They lead by action—whether it's a job,
+                a race, or a showdown. When things go sideways, they bring it back in line. Every street needs its
+                enforcers.
+            </li>
+            <li><strong>The Soldiers:</strong> They’ve earned their stripes. Trusted hands, loyal hearts, and steady
+                shots. They guide newcomers like brothers. They're the first in and the last out. The Finn Shelbys of
+                this outfit..
+            </li>
+            <li><strong>The Associates:</strong> Fresh faces with fire in their eyes. Just stepped into the pub, still
+                smelling of ambition. Watch, learn, earn your pint—and maybe, just maybe, you’ll rise through the smoke.
+            </li>
         </ul>
     </div>
 </section>
@@ -394,17 +779,21 @@
 <section id="tab-gallery" class="tab-content" role="tabpanel" aria-labelledby="tab-gallery-btn" tabindex="0">
     <div class="section">
         <h2>Gallery</h2>
-        <div class="gallery-grid" id="gallery-grid">
-            <!-- Images will be added here dynamically -->
+        <div id="gallery-grid" class="gallery-grid">
+            <img src="https://i.imgur.com/YourImageID1.jpg" alt="Screenshot 1"/>
+            <img src="https://i.imgur.com/YourImageID2.jpg" alt="Screenshot 2"/>
+            <img src="https://i.imgur.com/YourImageID3.jpg" alt="Screenshot 3"/>
+            <!-- more images -->
         </div>
     </div>
+</section>
 
-    <!-- Lightbox modal -->
-    <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true">
-        <span class="close-btn" id="lightbox-close" aria-label="Close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img" alt=""/>
-        <div id="lightbox-caption"></div>
-    </div>
+<!-- Lightbox modal -->
+<div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <span class="close-btn" id="lightbox-close" aria-label="Close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt=""/>
+    <div id="lightbox-caption"></div>
+</div>
 </section>
 
 <footer>
@@ -412,6 +801,7 @@
 </footer>
 
 <script>
+
 	// Tabs script
 	const tabs = document.querySelectorAll(".tab-button");
 	const contents = document.querySelectorAll(".tab-content");
@@ -441,7 +831,8 @@
 			panel.focus();
 		});
 	});
-
+</script>
+<script>
 	// Sample gallery images
 	const galleryImages = [
 		{
@@ -473,9 +864,7 @@
 		img.src = src;
 		img.alt = alt;
 		img.tabIndex = 0;
-		img.addEventListener("click", () => {
-			openLightbox(src, alt, caption);
-		});
+		img.addEventListener("click", () => openLightbox(src, alt, caption));
 		img.addEventListener("keypress", (e) => {
 			if (e.key === "Enter" || e.key === " ") {
 				e.preventDefault();
@@ -512,7 +901,8 @@
 			closeLightbox();
 		}
 	});
-
+</script>
+<script>
 	// =============================================================
 	// =================== CNR PLAYERS REFETCHER ===================
 	// =============================================================
