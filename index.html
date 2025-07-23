@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 
-<header style="text-align: center; padding: 2rem 1rem; background: #0a0a0a; color: #e63946; font-family: 'Georgia', serif; text-shadow: 1px 1px 3px #7f0000;">
-
+<header style="text-align: center; padding: 2rem 1rem; background: rgba(0, 0, 0, 0.3); color: #e63946; font-family: 'Georgia', serif; text-shadow: 1px 1px 3px #7f0000;">
     <a href="index.html" style="display: inline-block; margin-bottom: 1rem;">
         <img
                 src="https://i.imgur.com/jLtGADW.png"
@@ -17,17 +19,14 @@
       "
         />
     </a>
-
     <h1 style="font-size: 3rem; margin-bottom: 0.2rem; letter-spacing: 4px;">PEAKY BLINDERS</h1>
     <p style="font-size: 1.3rem; font-style: italic; letter-spacing: 2px; margin-top: 0;">
         Born of Smoke, Steel & Shadows — The Shelby Empire
     </p>
-
     <a href="https://discord.gg/cnrpeakyblinders" class="discord-button" target="_blank" rel="noopener noreferrer"
        style="display: inline-block; margin-top: 1.5rem;">
         Join our Discord
     </a>
-
 </header>
 
 <style>
@@ -44,7 +43,6 @@
         0 0 25px #e63946;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-
     .discord-widget-3d:hover {
         transform: translateY(-3px);
         box-shadow: 0 10px 25px rgba(230, 57, 70, 0.6),
@@ -52,7 +50,6 @@
         inset 0 8px 10px #ff6b6b,
         0 0 35px #ff1f3d;
     }
-
     #tab-discord h2 {
         color: #e63946;
         font-family: 'Georgia', serif;
@@ -62,8 +59,6 @@
         letter-spacing: 2px;
         text-shadow: 1px 1px 3px #000;
     }
-
-    /* Gallery container */
     #tab-gallery {
         background-color: #0a0a0a;
         color: #e63946;
@@ -74,8 +69,6 @@
         max-width: 900px;
         margin: 2rem auto;
     }
-
-    /* Gallery title */
     #tab-gallery h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
@@ -83,50 +76,36 @@
         text-align: center;
         text-shadow: 1px 1px 2px #b00000;
     }
-
-    /* Grid layout for images */
     .gallery-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1.2rem;
     }
-
-    /* Each image styling */
     .gallery-grid img {
         width: 100%;
-        height: auto;
-        border-radius: 8px;
-        border: 3px solid #e63946;
-        box-shadow: 0 4px 10px rgba(230, 57, 70, 0.6),
-        inset 0 0 10px #7f0000;
+        height: 150px;
         object-fit: cover;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: 2px solid red;
+        border-radius: 8px;
         cursor: pointer;
+        transition: transform 0.3s;
     }
-
-    /* Hover effect */
     .gallery-grid img:hover {
         transform: scale(1.05);
-        box-shadow: 0 6px 15px rgba(230, 57, 70, 0.9),
-        inset 0 0 15px #e63946;
+        border-color: #ff0000cc;
     }
-
-    /* Responsive adjustments */
     @media (max-width: 600px) {
         #tab-gallery {
             padding: 1rem;
             max-width: 95%;
         }
-
         #tab-gallery h2 {
             font-size: 1.8rem;
         }
     }
-
-    /* About Us section container */
     #tab-about {
-        background-color: #0a0a0a; /* Dark background */
-        color: #e63946; /* Bold red text */
+        background-color: #0a0a0a;
+        color: #e63946;
         font-family: 'Georgia', serif;
         padding: 2rem;
         border-radius: 8px;
@@ -134,55 +113,43 @@
         max-width: 700px;
         margin: 2rem auto;
     }
-
-    /* About Us title */
     #tab-about h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
-        color: #f1faee; /* Off-white for contrast */
+        color: #f1faee;
         text-align: center;
         text-shadow: 1px 1px 2px #b00000;
     }
-
-    /* About Us paragraph */
     #tab-about p {
-        background-color: #1b1b1b; /* Dark gray background block */
+        background-color: #1b1b1b;
         padding: 1.5rem;
         border-radius: 4px;
         box-shadow: inset 0 0 8px #7f0000;
         line-height: 1.6;
         font-size: 1.1rem;
-        color: #f1faee; /* Slightly lighter text for readability */
+        color: #f1faee;
         transition: background-color 0.3s ease;
     }
-
-    /* Hover effect on paragraph (optional) */
     #tab-about p:hover {
         background-color: #2f1218;
         cursor: default;
         box-shadow: inset 0 0 12px #e63946;
     }
-
-    /* Responsive adjustments */
     @media (max-width: 600px) {
         #tab-about {
             padding: 1rem;
             max-width: 95%;
         }
-
         #tab-about h2 {
             font-size: 1.8rem;
         }
-
         #tab-about p {
             font-size: 1rem;
         }
     }
-
-    /* Timeline section container */
     #tab-timeline {
-        background-color: #0a0a0a; /* Dark background */
-        color: #e63946; /* Bold red text */
+        background-color: #0a0a0a;
+        color: #e63946;
         font-family: 'Georgia', serif;
         padding: 2rem;
         border-radius: 8px;
@@ -190,26 +157,20 @@
         max-width: 700px;
         margin: 2rem auto;
     }
-
-    /* Timeline title */
     #tab-timeline h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
-        color: #f1faee; /* Off-white for contrast */
+        color: #f1faee;
         text-align: center;
         text-shadow: 1px 1px 2px #b00000;
     }
-
-    /* Timeline list */
     #tab-timeline ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-
-    /* Each timeline event */
     #tab-timeline li {
-        background-color: #1b1b1b; /* Dark gray */
+        background-color: #1b1b1b;
         border-left: 6px solid #e63946;
         margin-bottom: 1rem;
         padding: 1rem 1.5rem;
@@ -217,15 +178,11 @@
         box-shadow: inset 0 0 8px #7f0000;
         transition: background-color 0.3s ease;
     }
-
-    /* Hover effect */
     #tab-timeline li:hover {
         background-color: #2f1218;
         cursor: default;
         box-shadow: inset 0 0 12px #e63946;
     }
-
-    /* Strong emphasis (e.g. year/event titles) */
     #tab-timeline strong {
         color: #e63946;
         font-size: 1.2rem;
@@ -233,22 +190,18 @@
         letter-spacing: 1px;
         margin-right: 0.5rem;
     }
-
-    /* Responsive adjustments */
     @media (max-width: 600px) {
         #tab-timeline {
             padding: 1rem;
             max-width: 95%;
         }
-
         #tab-timeline h2 {
             font-size: 1.8rem;
         }
     }
-
     #tab-rules {
-        background-color: #0a0a0a; /* Same dark background */
-        color: #e63946; /* Same bold red text */
+        background-color: #0a0a0a;
+        color: #e63946;
         font-family: 'Georgia', serif;
         padding: 2rem;
         border-radius: 8px;
@@ -256,26 +209,20 @@
         max-width: 700px;
         margin: 2rem auto;
     }
-
-    /* Rules section title */
     #tab-rules h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
-        color: #f1faee; /* Off-white for contrast */
+        color: #f1faee;
         text-align: center;
         text-shadow: 1px 1px 2px #b00000;
     }
-
-    /* Rules list */
     #tab-rules ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-
-    /* Each rule item */
     #tab-rules li {
-        background-color: #1b1b1b; /* Dark gray block */
+        background-color: #1b1b1b;
         border-left: 6px solid #e63946;
         margin-bottom: 1rem;
         padding: 1rem 1.5rem;
@@ -283,29 +230,26 @@
         box-shadow: inset 0 0 8px #7f0000;
         transition: background-color 0.3s ease;
     }
-
-    /* Hover effect */
     #tab-rules li:hover {
         background-color: #2f1218;
         cursor: default;
         box-shadow: inset 0 0 12px #e63946;
     }
-
-    /* Responsive adjustments */
     @media (max-width: 600px) {
         #tab-rules {
             padding: 1rem;
             max-width: 95%;
         }
-
         #tab-rules h2 {
             font-size: 1.8rem;
         }
+        #tab-rules li {
+            font-size: 1rem;
+        }
     }
-
     #tab-ranks {
-        background-color: #0a0a0a; /* Almost black background */
-        color: #e63946; /* Bold red for main text */
+        background-color: #0a0a0a;
+        color: #e63946;
         font-family: 'Georgia', serif;
         padding: 2rem;
         border-radius: 8px;
@@ -313,26 +257,20 @@
         max-width: 700px;
         margin: 2rem auto;
     }
-
-    /* Section title */
     #tab-ranks h2 {
         font-size: 2.5rem;
         margin-bottom: 1.5rem;
-        color: #f1faee; /* Off-white for contrast */
+        color: #f1faee;
         text-align: center;
         text-shadow: 1px 1px 2px #b00000;
     }
-
-    /* Ranks list */
     #tab-ranks ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
-
-    /* Each rank item */
     #tab-ranks li {
-        background-color: #1b1b1b; /* Dark gray for contrast */
+        background-color: #1b1b1b;
         border-left: 6px solid #e63946;
         margin-bottom: 1rem;
         padding: 1rem 1.5rem;
@@ -340,15 +278,11 @@
         transition: background-color 0.3s ease;
         box-shadow: inset 0 0 8px #7f0000;
     }
-
-    /* On hover highlight */
     #tab-ranks li:hover {
         background-color: #2f1218;
         cursor: default;
         box-shadow: inset 0 0 12px #e63946;
     }
-
-    /* Strong rank titles */
     #tab-ranks strong {
         color: #e63946;
         font-size: 1.2rem;
@@ -356,55 +290,52 @@
         letter-spacing: 1px;
         margin-right: 0.5rem;
     }
-
-    /* Responsive adjustments */
     @media (max-width: 600px) {
         #tab-ranks {
             padding: 1rem;
             max-width: 95%;
         }
-
         #tab-ranks h2 {
             font-size: 1.8rem;
         }
+        #tab-ranks li {
+            font-size: 1rem;
+        }
     }
     .fivem-stats-3d {
-    max-width: 650px;
-    margin: 0 auto;
-    padding: 1rem;
-    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
-    border-radius: 16px;
-    border: 3px solid #e63946;
-    box-shadow:
-      0 8px 15px rgba(230, 57, 70, 0.4),
-      inset 0 -4px 8px #7f0000,
-      inset 0 6px 8px #ff5252,
-      0 0 25px #e63946;
-    text-align: center;
-    color: #f1f1f1;
-    font-family: 'Georgia', serif;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .fivem-stats-3d:hover {
-    transform: translateY(-3px);
-    box-shadow:
-      0 10px 25px rgba(230, 57, 70, 0.6),
-      inset 0 -6px 10px #7f0000,
-      inset 0 8px 10px #ff6b6b,
-      0 0 35px #ff1f3d;
-  }
-
-  #tab-fivem h2 {
-    color: #e63946;
-    font-family: 'Georgia', serif;
-    text-align: center;
-    margin-bottom: 1.2rem;
-    font-size: 2rem;
-    letter-spacing: 2px;
-    text-shadow: 1px 1px 3px #000;
-  }
-
+        max-width: 650px;
+        margin: 0 auto;
+        padding: 1rem;
+        background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+        border-radius: 16px;
+        border: 3px solid #e63946;
+        box-shadow:
+          0 8px 15px rgba(230, 57, 70, 0.4),
+          inset 0 -4px 8px #7f0000,
+          inset 0 6px 8px #ff5252,
+          0 0 25px #e63946;
+        text-align: center;
+        color: #f1f1f1;
+        font-family: 'Georgia', serif;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .fivem-stats-3d:hover {
+        transform: translateY(-3px);
+        box-shadow:
+          0 10px 25px rgba(230, 57, 70, 0.6),
+          inset 0 -6px 10px #7f0000,
+          inset 0 8px 10px #ff6b6b,
+          0 0 35px #ff1f3d;
+    }
+    #tab-fivem h2 {
+        color: #e63946;
+        font-family: 'Georgia', serif;
+        text-align: center;
+        margin-bottom: 1.2rem;
+        font-size: 2rem;
+        letter-spacing: 2px;
+        text-shadow: 1px 1px 3px #000;
+    }
     @keyframes pulse {
         0%, 100% {
             box-shadow: 0 0 15px #e63946;
@@ -413,7 +344,6 @@
             box-shadow: 0 0 30px #a71d2a;
         }
     }
-
     .discord-button {
         display: inline-flex;
         align-items: center;
@@ -437,14 +367,12 @@
         position: relative;
         z-index: 0;
     }
-
     .discord-button:active {
         transform: translateY(3px);
         box-shadow: 0 4px 7px rgba(230, 57, 70, 0.4),
         inset 0 4px 6px #7f0000,
         inset 0 -6px 8px #ff5252;
     }
-
     .discord-button:hover {
         box-shadow: 0 10px 20px rgba(230, 57, 70, 0.8),
         inset 0 -5px 10px #9b0f15,
@@ -453,35 +381,28 @@
         text-shadow: 1px 1px 3px #7f0000;
     }
 </style>
-</head>
-
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet"/>
 <style>
     body {
         margin: 0;
         font-family: "Roboto Condensed", sans-serif;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://i.imgur.com/MR2OfCr.jpeg") no-repeat fixed center center;
         background-size: cover;
         color: white;
-        background: black url("background.jpg") no-repeat fixed center center;
     }
-
     header {
-        background-color: rgba(0, 0, 0, 0.85);
+        background-color: rgba(0, 0, 0, 0.3);
         padding: 1rem;
         text-align: center;
         border-bottom: 2px solid red;
     }
-
     header img {
         height: 80px;
     }
-
     h1 {
         color: red;
         margin-top: 0.5rem;
     }
-
-    /* Tab container */
     .tabs {
         display: flex;
         background-color: rgba(0, 0, 0, 0.85);
@@ -490,8 +411,6 @@
         border-radius: 10px 10px 0 0;
         overflow-x: auto;
     }
-
-    /* Tab buttons */
     .tab-button {
         flex: 1;
         padding: 1rem 1.5rem;
@@ -504,21 +423,24 @@
         transition: all 0.3s ease;
         text-align: center;
         white-space: nowrap;
+        min-height: 48px;
     }
-
     .tab-button:hover,
     .tab-button:focus {
         background-color: #330000;
         outline: none;
     }
-
     .tab-button.active {
         border-bottom-color: red;
         background-color: rgba(255, 0, 0, 0.15);
         font-weight: 900;
     }
-
-    /* Content sections */
+    @media (max-width: 600px) {
+        .tab-button {
+            padding: 1.2rem 1rem;
+            min-height: 48px;
+        }
+    }
     .tab-content {
         display: none;
         padding: 2rem;
@@ -527,12 +449,9 @@
         border: 2px solid red;
         border-radius: 0 0 10px 10px;
     }
-
     .tab-content.active {
         display: block;
     }
-
-    /* 3D Discord button styling */
     .discord-button {
         display: inline-block;
         padding: 1rem 2rem;
@@ -542,7 +461,8 @@
         font-weight: 700;
         border-radius: 12px;
         text-decoration: none;
-        box-shadow: 0 6px 0 #a52b2b, /* bottom shadow for 3D depth */ 0 0 15px #ff4c4c; /* subtle glow */
+        box-shadow: 0 6px 0 #a52b2b,
+        0 0 15px #ff4c4c;
         transition: transform 0.2s ease,
         box-shadow 0.2s ease,
         background-color 0.3s ease;
@@ -550,28 +470,23 @@
         perspective: 500px;
         transform-style: preserve-3d;
     }
-
     .discord-button:hover {
         background-color: #ff4c4c;
         box-shadow: 0 3px 0 #a52b2b,
         0 0 25px #ff6666;
         transform: translateY(3px);
     }
-
     .discord-button:active {
         background-color: #b73131;
         box-shadow: none;
         transform: translateY(6px);
     }
-
-    /* Gallery Styles */
     .gallery-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 10px;
         margin-top: 1rem;
     }
-
     .gallery-grid img {
         width: 100%;
         height: 150px;
@@ -581,13 +496,10 @@
         cursor: pointer;
         transition: transform 0.3s;
     }
-
     .gallery-grid img:hover {
         transform: scale(1.05);
         border-color: #ff0000cc;
     }
-
-    /* Lightbox Modal Styles */
     .lightbox-modal {
         display: none;
         position: fixed;
@@ -600,7 +512,6 @@
         overflow: auto;
         background-color: rgba(0, 0, 0, 0.9);
     }
-
     .lightbox-content {
         margin: auto;
         display: block;
@@ -609,14 +520,12 @@
         border: 3px solid red;
         border-radius: 10px;
     }
-
     #lightbox-caption {
         margin: 15px auto;
         text-align: center;
         color: #fff;
         font-size: 1.1rem;
     }
-
     .close-btn {
         position: absolute;
         top: 20px;
@@ -627,64 +536,55 @@
         cursor: pointer;
         user-select: none;
     }
-
     .close-btn:hover,
     .close-btn:focus {
         color: #ff0000cc;
     }
-
     footer {
         text-align: center;
         padding: 1rem;
         font-size: 0.9rem;
         color: #ccc;
+        background-color: rgba(0, 0, 0, 0.85);
     }
-
-    /* Scrollbar for tabs if overflow */
+    @media (max-width: 600px) {
+        footer {
+            font-size: 1rem;
+        }
+    }
     .tabs::-webkit-scrollbar {
         height: 6px;
     }
-
     .tabs::-webkit-scrollbar-thumb {
         background: red;
         border-radius: 3px;
     }
-
     .tabs::-webkit-scrollbar-track {
         background: transparent;
     }
 </style>
-</head>
 
 <body>
-
 <nav class="tabs" role="tablist" aria-label="Main content tabs">
-    <button class="tab-button active" role="tab" aria-selected="true" aria-controls="tab-about" id="tab-about-btn"
-            tabindex="0">
+    <button class="tab-button active" role="tab" aria-selected="true" aria-controls="tab-about" id="tab-about-btn" tabindex="0">
         About
     </button>
-    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-timeline" id="tab-timeline-btn"
-            tabindex="-1">
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-timeline" id="tab-timeline-btn" tabindex="-1">
         Timeline
     </button>
-    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-discord" id="tab-discord-btn"
-            tabindex="-1">
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-discord" id="tab-discord-btn" tabindex="-1">
         Discord Stats
     </button>
-    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-fivem" id="tab-fivem-btn"
-            tabindex="-1">
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-fivem" id="tab-fivem-btn" tabindex="-1">
         FiveM Server Stats
     </button>
-    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-rules" id="tab-rules-btn"
-            tabindex="-1">
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-rules" id="tab-rules-btn" tabindex="-1">
         Rules
     </button>
-    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-ranks" id="tab-ranks-btn"
-            tabindex="-1">
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-ranks" id="tab-ranks-btn" tabindex="-1">
         Ranks
     </button>
-    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-gallery" id="tab-gallery-btn"
-            tabindex="-1">
+    <button class="tab-button" role="tab" aria-selected="false" aria-controls="tab-gallery" id="tab-gallery-btn" tabindex="-1">
         Gallery
     </button>
 </nav>
@@ -695,19 +595,15 @@
         <p>
             We are a respectful and fun-loving Cops & Robbers crew on FiveM EU1. Our mission is to create an enjoyable
             experience with friendly players who support and look out for each other. Join us and become part of the
-            Peaky
-            Blinders legacy.
+            Peaky Blinders legacy.
         </p>
     </div>
-
     <div class="section">
         <h2>About Us</h2>
         <p>
             The Peaky Blinders CNR crew was founded with one goal: to dominate the streets of FiveM with style, respect,
-            and
-            brotherhood. We value teamwork, loyalty, and top-tier Player. Whether you're a seasoned veteran or a new
-            recruit,
-            if you wear the PB tag — you're family.
+            and brotherhood. We value teamwork, loyalty, and top-tier Player. Whether you're a seasoned veteran or a new
+            recruit, if you wear the PB tag — you're family.
         </p>
     </div>
 </section>
@@ -735,6 +631,7 @@
                     allowtransparency="true"
                     frameborder="0"
                     sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"
+                    title="Discord Server Widget"
             ></iframe>
         </div>
     </div>
@@ -742,38 +639,30 @@
 
 <section id="tab-fivem" class="tab-content" role="tabpanel" aria-labelledby="tab-fivem-btn" tabindex="0">
     <div class="section" style="text-align: center;">
-    <h2>FiveM Server Stats</h2>
-    <div class="fivem-stats-3d">
-      <div id="fivem-stats">
-        <!-- Your dynamic stats script will inject here -->
-      </div>
+        <h2>FiveM Server Stats</h2>
+        <div class="fivem-stats-3d">
+            <div id="fivem-stats">
+                <!-- Your dynamic stats script will inject here -->
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section id="tab-rules" class="tab-content" role="tabpanel" aria-labelledby="tab-rules-btn" tabindex="0">
     <div class="section">
         <h2>Rules</h2>
         <ol>
-            <li><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No
-                toxic
-                behavior, threats, or drama.
+            <li><strong>Respect & Behavior:</strong> Show respect to all crew members, staff, allies, and enemies. No toxic behavior, threats, or drama.</li>
             <li><strong>Crew Loyalty:</strong> PB is family — disloyalty or double-clanning is not allowed.</li>
-            <li><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to
-                removal.
-            </li>
+            <li><strong>Activity:</strong> Stay active in Discord and in-game. Inactivity for 14+ days may lead to removal.</li>
             <li><strong>Gameplay:</strong> Follow all CNR rules. No cheating or exploiting.</li>
             <li><strong>Voice:</strong> Use correct channels, avoid spam, and stay organized during events.</li>
             <li><strong>Identity:</strong> Use PB tags and represent the crew properly.</li>
-            <li><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.
-            </li>
+            <li><strong>Media & Content:</strong> Don't share private content without permission. Protect PB's image.</li>
             <li><strong>Age Requirement:</strong> You must meet the minimum age set by PB admins (16+ or 18+).</li>
             <li><strong>Name & Tag Usage:</strong> Use crew tags properly. Misuse leads to action.</li>
             <li><strong>Final Word:</strong> PB leadership has the final say. Terms can change anytime.</li>
-            <li><strong>Rank & Advancement:</strong> Respect the hierarchy. Rank promotions are earned through activity
-                and
-                conduct.
-            </li>
+            <li><strong>Rank & Advancement:</strong> Respect the hierarchy. Rank promotions are earned through activity and conduct.</li>
         </ol>
     </div>
 </section>
@@ -782,36 +671,14 @@
     <div class="section">
         <h2>Ranks</h2>
         <ul>
-            <li><strong>The Leader:</strong> The one who built it from the ashes. The brain of the operation, the heart
-                of the family. Runs this crew like a razor-sharp empire. Orders flow from him—and they don’t get
-                questioned.
-            </li>
-            <li><strong>The Co-Leader:</strong> Founding hands that helped shape the Blinders. Trusted by the Leader
-                himself, these men lead with sharp wit, cold blood, and an eye for loyalty. Our very own Thomas Shelbys.
-            </li>
-            <li><strong>The Boss:</strong> The iron fists beneath the velvet gloves. When there’s trouble, they’re the
-                ones who knock. They speak for the top and don’t waste time. Think of them as our Arthur Shelbys—brutal,
-                loyal, and feared.
-            </li>
-            <li><strong>The Senior Capos:</strong> Whispers travel through them. They guide Caporegimes, vote in the
-                smoke-filled backrooms, and keep the crew’s wheels turning. They hold the balance between chaos and
-                command.
-            </li>
-            <li><strong>The Caporegimes:</strong> They bring new blood into the fold. Show them the ropes, show them the
-                rules—and if needed, show them the door. The sharp-dressed mentors of PB, with grit under their
-                fingernails.
-            </li>
-            <li><strong>The Lieutenants:</strong> The boots on the cobblestones. They lead by action—whether it's a job,
-                a race, or a showdown. When things go sideways, they bring it back in line. Every street needs its
-                enforcers.
-            </li>
-            <li><strong>The Soldiers:</strong> They’ve earned their stripes. Trusted hands, loyal hearts, and steady
-                shots. They guide newcomers like brothers. They're the first in and the last out. The Finn Shelbys of
-                this outfit..
-            </li>
-            <li><strong>The Associates:</strong> Fresh faces with fire in their eyes. Just stepped into the pub, still
-                smelling of ambition. Watch, learn, earn your pint—and maybe, just maybe, you’ll rise through the smoke.
-            </li>
+            <li><strong>The Leader:</strong> The one who built it from the ashes. The brain of the operation, the heart of the family. Runs this crew like a razor-sharp empire. Orders flow from him—and they don’t get questioned.</li>
+            <li><strong>The Co-Leader:</strong> Founding hands that helped shape the Blinders. Trusted by the Leader himself, these men lead with sharp wit, cold blood, and an eye for loyalty. Our very own Thomas Shelbys.</li>
+            <li><strong>The Boss:</strong> The iron fists beneath the velvet gloves. When there’s trouble, they’re the ones who knock. They speak for the top and don’t waste time. Think of them as our Arthur Shelbys—brutal, loyal, and feared.</li>
+            <li><strong>The Senior Capos:</strong> Whispers travel through them. They guide Caporegimes, vote in the smoke-filled backrooms, and keep the crew’s wheels turning. They hold the balance between chaos and command.</li>
+            <li><strong>The Caporegimes:</strong> They bring new blood into the fold. Show them the ropes, show them the rules—and if needed, show them the door. The sharp-dressed mentors of PB, with grit under their fingernails.</li>
+            <li><strong>The Lieutenants:</strong> The boots on the cobblestones. They lead by action—whether it's a job, a race, or a showdown. When things go sideways, they bring it back in line. Every street needs its enforcers.</li>
+            <li><strong>The Soldiers:</strong> They’ve earned their stripes. Trusted hands, loyal hearts, and steady shots. They guide newcomers like brothers. They're the first in and the last out. The Finn Shelbys of this outfit.</li>
+            <li><strong>The Associates:</strong> Fresh faces with fire in their eyes. Just stepped into the pub, still smelling of ambition. Watch, learn, earn your pint—and maybe, just maybe, you’ll rise through the smoke.</li>
         </ul>
     </div>
 </section>
@@ -820,239 +687,188 @@
     <div class="section">
         <h2>Gallery</h2>
         <div id="gallery-grid" class="gallery-grid">
-            <img src="https://i.imgur.com/YourImageID1.jpg" alt="Screenshot 1"/>
-            <img src="https://i.imgur.com/YourImageID2.jpg" alt="Screenshot 2"/>
-            <img src="https://i.imgur.com/YourImageID3.jpg" alt="Screenshot 3"/>
-            <!-- more images -->
+            <!-- Images will be populated dynamically by JavaScript -->
         </div>
     </div>
 </section>
 
-<!-- Lightbox modal -->
 <div id="lightbox-modal" class="lightbox-modal" aria-hidden="true" role="dialog" aria-modal="true">
-    <span class="close-btn" id="lightbox-close" aria-label="Close">&times;</span>
+    <span class="close-btn" id="lightbox-close" aria-label="Close">×</span>
     <img class="lightbox-content" id="lightbox-img" alt=""/>
     <div id="lightbox-caption"></div>
 </div>
-</section>
 
 <footer>
-    &copy; 2025 Peaky Blinders Crew. All rights reserved.
+    © 2025 Peaky Blinders Crew. All rights reserved.
 </footer>
 
 <script>
-
-	// Tabs script
-	const tabs = document.querySelectorAll(".tab-button");
-	const contents = document.querySelectorAll(".tab-content");
-
-	tabs.forEach((tab) => {
-		tab.addEventListener("click", () => {
-			// Remove active states
-			tabs.forEach((btn) => {
-				btn.classList.remove("active");
-				btn.setAttribute("aria-selected", "false");
-				btn.setAttribute("tabindex", "-1");
-			});
-
-			contents.forEach((content) => {
-				content.classList.remove("active");
-				content.setAttribute("tabindex", "-1");
-			});
-
-			// Activate current tab
-			tab.classList.add("active");
-			tab.setAttribute("aria-selected", "true");
-			tab.setAttribute("tabindex", "0");
-			const panelId = tab.getAttribute("aria-controls");
-			const panel = document.getElementById(panelId);
-			panel.classList.add("active");
-			panel.setAttribute("tabindex", "0");
-			panel.focus();
-		});
-	});
+    // Tabs script
+    const tabs = document.querySelectorAll(".tab-button");
+    const contents = document.querySelectorAll(".tab-content");
+    tabs.forEach((tab) => {
+        tab.addEventListener("click", () => {
+            tabs.forEach((btn) => {
+                btn.classList.remove("active");
+                btn.setAttribute("aria-selected", "false");
+                btn.setAttribute("tabindex", "-1");
+            });
+            contents.forEach((content) => {
+                content.classList.remove("active");
+                content.setAttribute("tabindex", "-1");
+            });
+            tab.classList.add("active");
+            tab.setAttribute("aria-selected", "true");
+            tab.setAttribute("tabindex", "0");
+            const panelId = tab.getAttribute("aria-controls");
+            const panel = document.getElementById(panelId);
+            panel.classList.add("active");
+            panel.setAttribute("tabindex", "0");
+            panel.focus();
+        });
+    });
 </script>
 <script>
-	// Sample gallery images
-	const galleryImages = [
-		{
-	 
-	];
-
-	const galleryGrid = document.getElementById("gallery-grid");
-	const lightboxModal = document.getElementById("lightbox-modal");
-	const lightboxImg = document.getElementById("lightbox-img");
-	const lightboxCaption = document.getElementById("lightbox-caption");
-	const lightboxClose = document.getElementById("lightbox-close");
-
-	// Populate gallery
-	galleryImages.forEach(({src, alt, caption}) => {
-		const img = document.createElement("img");
-		img.src = src;
-		img.alt = alt;
-		img.tabIndex = 0;
-		img.addEventListener("click", () => openLightbox(src, alt, caption));
-		img.addEventListener("keypress", (e) => {
-			if (e.key === "Enter" || e.key === " ") {
-				e.preventDefault();
-				openLightbox(src, alt, caption);
-			}
-		});
-		galleryGrid.appendChild(img);
-	});
-
-	function openLightbox(src, alt, caption) {
-		lightboxImg.src = src;
-		lightboxImg.alt = alt;
-		lightboxCaption.textContent = caption;
-		lightboxModal.style.display = "block";
-		lightboxModal.setAttribute("aria-hidden", "false");
-		lightboxClose.focus();
-	}
-
-	function closeLightbox() {
-		lightboxModal.style.display = "none";
-		lightboxModal.setAttribute("aria-hidden", "true");
-	}
-
-	lightboxClose.addEventListener("click", closeLightbox);
-	lightboxModal.addEventListener("click", (e) => {
-		if (e.target === lightboxModal) {
-			closeLightbox();
-		}
-	});
-
-	// Close on ESC key
-	document.addEventListener("keydown", (e) => {
-		if (e.key === "Escape" && lightboxModal.style.display === "block") {
-			closeLightbox();
-		}
-	});
+    // Gallery script
+    const galleryImages = [
+        { src: "https://i.imgur.com/PBImage01.jpg", alt: "Tommy Shelby Portrait", caption: "Tommy Shelby in his iconic suit" },
+        { src: "https://i.imgur.com/PBImage02.jpg", alt: "Arthur Shelby Fight", caption: "Arthur Shelby in a brawl" },
+        { src: "https://i.imgur.com/PBImage03.jpg", alt: "Birmingham Street", caption: "Dark streets of Birmingham" }
+    ];
+    const galleryGrid = document.getElementById("gallery-grid");
+    const lightboxModal = document.getElementById("lightbox-modal");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const lightboxCaption = document.getElementById("lightbox-caption");
+    const lightboxClose = document.getElementById("lightbox-close");
+    galleryImages.forEach(({src, alt, caption}) => {
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = alt;
+        img.setAttribute("data-caption", caption);
+        img.setAttribute("loading", "lazy");
+        img.tabIndex = 0;
+        img.addEventListener("click", () => openLightbox(src, alt, caption));
+        img.addEventListener("keypress", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                openLightbox(src, alt, caption);
+            }
+        });
+        galleryGrid.appendChild(img);
+    });
+    function openLightbox(src, alt, caption) {
+        lightboxImg.src = src;
+        lightboxImg.alt = alt;
+        lightboxCaption.textContent = caption;
+        lightboxModal.style.display = "block";
+        lightboxModal.setAttribute("aria-hidden", "false");
+        lightboxClose.focus();
+    }
+    function closeLightbox() {
+        lightboxModal.style.display = "none";
+        lightboxModal.setAttribute("aria-hidden", "true");
+    }
+    lightboxClose.addEventListener("click", closeLightbox);
+    lightboxModal.addEventListener("click", (e) => {
+        if (e.target === lightboxModal) {
+            closeLightbox();
+        }
+    });
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && lightboxModal.style.display === "block") {
+            closeLightbox();
+        }
+    });
 </script>
 <script>
-	// =============================================================
-	// =================== CNR PLAYERS REFETCHER ===================
-	// =============================================================
-
-	const serverIds = ["EU1", "EU2", "US1", "US2"];
-	const endpointBase = "https://api.gtacnr.net/cnr/players?serverId=";
-	const seaEndpoint = "https://sea.gtacnr.net/cnr/players?serverId=SEA";
-	const listElement = document.getElementById("fivem-stats");
-	const refetchingInterval = 60; // in seconds
-
-	const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
-
-	let isFirstLoad = true;
-
-	async function fetchAllServersSequentially() {
-		const allPlayers = [];
-
-		for (const serverId of serverIds) {
-			try {
-				const response = await fetch(`${endpointBase}${serverId}`);
-				console.log(`[${serverId}] Status: ${response.status}`);
-
-				if (response.status === 429) {
-					throw new Error(`[${serverId}] Too many requests (429), try again later.`);
-				}
-
-				if (!response.ok) {
-					throw new Error(`[${serverId}] HTTP Error (${response.status})`);
-				}
-
-				const data = await response.json();
-
-				const playersPB = data
-					.filter(player => player?.Username?.Username?.startsWith("P-B"))
-					.map(player => ({
-						name: player?.Username?.Username,
-						serverId: serverId
-					}));
-
-				allPlayers.push(...playersPB);
-
-			} catch (error) {
-				console.warn(error.message);
-				allPlayers.push({name: `⚠ ${error.message}`, serverId: serverId});
-			}
-
-			await wait(1000);
-		}
-
-		// Fetch SEA server
-		try {
-			const response = await fetch(seaEndpoint);
-			console.log(`[SEA] Status: ${response.status}`);
-
-			if (response.status === 429) {
-				throw new Error(`[SEA] Too many requests (429), try again later.`);
-			}
-
-			if (!response.ok) {
-				throw new Error(`[SEA] HTTP Error (${response.status})`);
-			}
-
-			const data = await response.json();
-
-			const playersPB = data
-				.filter(player => player?.Username?.Username?.startsWith("P-B"))
-				.map(player => ({
-					name: player?.Username?.Username,
-					serverId: "SEA"
-				}));
-
-			allPlayers.push(...playersPB);
-
-		} catch (error) {
-			console.warn(error.message);
-			allPlayers.push({name: `⚠ ${error.message}`, serverId: "SEA"});
-		}
-
-		await wait(1000); // Respecte le délai aussi pour le serveur SEA
-
-		displaySortedPlayers(allPlayers);
-	}
-
-	function displaySortedPlayers(players) {
-		listElement.innerHTML = '';
-
-		if (players.length === 0) {
-			listElement.innerHTML = '<li>No "P-B" players found on the servers.</li>';
-			return;
-		}
-
-		// Ajoute SEA dans l'ordre pour que le tri fonctionne
-		const sortOrder = [...serverIds, "SEA"];
-
-		players.sort((a, b) => {
-			const orderA = sortOrder.indexOf(a.serverId);
-			const orderB = sortOrder.indexOf(b.serverId);
-			if (orderA !== orderB) return orderA - orderB;
-			return a.name.localeCompare(b.name, 'fr');
-		});
-
-		players.forEach(player => {
-			const li = document.createElement('li');
-			li.textContent = `${player.name} (${player.serverId})`;
-			listElement.appendChild(li);
-		});
-	}
-
-	async function startFetchingLoop() {
-		if (isFirstLoad) {
-			listElement.innerHTML = '<li>Loading P-B Members...</li>';
-		}
-
-		await fetchAllServersSequentially();
-		isFirstLoad = false;
-
-		setTimeout(startFetchingLoop, refetchingInterval * 1000);
-	}
-
-	document.addEventListener("DOMContentLoaded", () => {
-		startFetchingLoop();
-	});
+    // CNR PLAYERS REFETCHER
+    const serverIds = ["EU1", "EU2", "US1", "US2"];
+    const endpointBase = "https://api.gtacnr.net/cnr/players?serverId=";
+    const seaEndpoint = "https://sea.gtacnr.net/cnr/players?serverId=SEA";
+    const listElement = document.getElementById("fivem-stats");
+    const refetchingInterval = 60;
+    const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+    let isFirstLoad = true;
+    async function fetchAllServersSequentially() {
+        const allPlayers = [];
+        for (const serverId of serverIds) {
+            try {
+                const response = await fetch(`${endpointBase}${serverId}`);
+                console.log(`[${serverId}] Status: ${response.status}`);
+                if (response.status === 429) {
+                    throw new Error(`[${serverId}] Too many requests (429), try again later.`);
+                }
+                if (!response.ok) {
+                    throw new Error(`[${serverId}] HTTP Error (${response.status})`);
+                }
+                const data = await response.json();
+                const playersPB = data
+                    .filter(player => player?.Username?.Username?.startsWith("P-B"))
+                    .map(player => ({
+                        name: player?.Username?.Username,
+                        serverId: serverId
+                    }));
+                allPlayers.push(...playersPB);
+            } catch (error) {
+                console.warn(error.message);
+                allPlayers.push({name: `⚠ ${error.message}`, serverId: serverId});
+            }
+            await wait(1000);
+        }
+        try {
+            const response = await fetch(seaEndpoint);
+            console.log(`[SEA] Status: ${response.status}`);
+            if (response.status === 429) {
+                throw new Error(`[SEA] Too many requests (429), try again later.`);
+            }
+            if (!response.ok) {
+                throw new Error(`[SEA] HTTP Error (${response.status})`);
+            }
+            const data = await response.json();
+            const playersPB = data
+                .filter(player => player?.Username?.Username?.startsWith("P-B"))
+                .map(player => ({
+                    name: player?.Username?.Username,
+                    serverId: "SEA"
+                }));
+            allPlayers.push(...playersPB);
+        } catch (error) {
+            console.warn(error.message);
+            allPlayers.push({name: `⚠ ${error.message}`, serverId: "SEA"});
+        }
+        await wait(1000);
+        displaySortedPlayers(allPlayers);
+    }
+    function displaySortedPlayers(players) {
+        listElement.innerHTML = '';
+        if (players.length === 0) {
+            listElement.innerHTML = '<li>No "P-B" players found on the servers.</li>';
+            return;
+        }
+        const sortOrder = [...serverIds, "SEA"];
+        players.sort((a, b) => {
+            const orderA = sortOrder.indexOf(a.serverId);
+            const orderB = sortOrder.indexOf(b.serverId);
+            if (orderA !== orderB) return orderA - orderB;
+            return a.name.localeCompare(b.name, 'fr');
+        });
+        players.forEach(player => {
+            const li = document.createElement('li');
+            li.textContent = `${player.name} (${player.serverId})`;
+            listElement.appendChild(li);
+        });
+    }
+    async function startFetchingLoop() {
+        if (isFirstLoad) {
+            listElement.innerHTML = '<li>Loading P-B Members...</li>';
+        }
+        await fetchAllServersSequentially();
+        isFirstLoad = false;
+        setTimeout(startFetchingLoop, refetchingInterval * 1000);
+    }
+    document.addEventListener("DOMContentLoaded", () => {
+        startFetchingLoop();
+    });
 </script>
 </body>
-
 </html>
