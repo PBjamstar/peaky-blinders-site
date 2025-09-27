@@ -891,26 +891,35 @@
                     throw new Error(`HTTP Error ${response.status}: ${response.statusText}`);
                 }
                 const data = await response.json();
-                console.log('[Discord] Raw Data:', data);
-                const pbMembers = data.members
-                    .filter(member => member.nick && member.nick.toUpperCase().startsWith("P-B |"))
-                    .map(member => ({
-                        name: member.nick || member.user?.username || 'Unknown',
-                        isOnline: member.status !== 'offline' // Assuming status field exists
-                    }))
-                    .sort((a, b) => a.name.localeCompare(b.name, 'en'));
+                console.log('[Discord] Full Response:', JSON.stringify(data, null, 2)); // Log full response for debugging
+                const pbMembers = [
+                    ...data.members
+                        .filter(member => member.nick && member.nick.toUpperCase().startsWith("P-B |"))
+                        .map(member => ({
+                            name: member.nick,
+                            isOnline: member.status !== 'offline'
+                        })),
+                    ...data.members
+                        .filter(member => member.user?.username && member.user.username.toUpperCase().startsWith("P-B |"))
+                        .map(member => ({
+                            name: member.user.username,
+                            isOnline: member.status !== 'offline'
+                        }))
+                ].filter((member, index, self) =>
+                    index === self.findIndex(m => m.name === member.name)
+                ).sort((a, b) => a.name.localeCompare(b.name, 'en'));
 
                 displayDiscordMembers(pbMembers);
             } catch (error) {
                 console.error('[Discord] Fetch Error:', error.message);
                 if (retries > 0) {
                     console.log(`[Discord] Retrying... (${maxRetries - retries + 1}/${maxRetries})`);
-                    await wait(2000); // Wait 2 seconds before retrying
+                    await wait(5000); // Increased to 5 seconds for better rate limit handling
                     return fetchDiscordMembers(retries - 1);
                 }
                 const li = document.createElement('li');
                 li.className = 'error';
-                li.textContent = `⚠ Failed to load P-B members: ${error.message}. Check console for details.`;
+                li.textContent = `⚠ Failed to load P-B members: ${error.message}. Check console for details or try again later.`;
                 discordListElement.innerHTML = '';
                 discordListElement.appendChild(li);
             }
@@ -921,7 +930,7 @@
             if (members.length === 0) {
                 const li = document.createElement('li');
                 li.className = 'error';
-                li.textContent = 'No "P-B |" members online right now. Join the action or check later!';
+                li.textContent = 'No "P-B |" members online right now. Ensure tags are set or check later!';
                 discordListElement.appendChild(li);
                 return;
             }
