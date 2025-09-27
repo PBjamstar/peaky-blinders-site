@@ -871,22 +871,29 @@
         const discordEndpoint = `https://lurkr.io/api/v1/getmembers/${discordServerId}`;
         const discordListElement = document.getElementById("pb-discord-list");
         const discordRefetchInterval = 60; // seconds
+        const maxRetries = 3;
         const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
         let isFirstDiscordLoad = true;
 
-        async function fetchDiscordMembers() {
+        async function fetchDiscordMembers(retries = maxRetries) {
             try {
                 if (isFirstDiscordLoad) {
                     discordListElement.innerHTML = '<li class="loading">Loading P-B Members...</li>';
                 }
-                const response = await fetch(discordEndpoint);
-                console.log('[Discord] Status:', response.status);
+                const response = await fetch(discordEndpoint, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                console.log('[Discord] API Response Status:', response.status);
                 if (!response.ok) {
-                    throw new Error(`HTTP Error (${response.status})`);
+                    throw new Error(`HTTP Error ${response.status}: ${response.statusText}`);
                 }
                 const data = await response.json();
+                console.log('[Discord] Raw Data:', data);
                 const pbMembers = data.members
-                    .filter(member => member.nick && member.nick.toUpperCase().startsWith("P-B"))
+                    .filter(member => member.nick && member.nick.toUpperCase().startsWith("P-B |"))
                     .map(member => ({
                         name: member.nick || member.user?.username || 'Unknown',
                         isOnline: member.status !== 'offline' // Assuming status field exists
@@ -895,10 +902,15 @@
 
                 displayDiscordMembers(pbMembers);
             } catch (error) {
-                console.warn('[Discord] Error:', error.message);
+                console.error('[Discord] Fetch Error:', error.message);
+                if (retries > 0) {
+                    console.log(`[Discord] Retrying... (${maxRetries - retries + 1}/${maxRetries})`);
+                    await wait(2000); // Wait 2 seconds before retrying
+                    return fetchDiscordMembers(retries - 1);
+                }
                 const li = document.createElement('li');
                 li.className = 'error';
-                li.textContent = `⚠ ${error.message}`;
+                li.textContent = `⚠ Failed to load P-B members: ${error.message}. Check console for details.`;
                 discordListElement.innerHTML = '';
                 discordListElement.appendChild(li);
             }
@@ -909,13 +921,13 @@
             if (members.length === 0) {
                 const li = document.createElement('li');
                 li.className = 'error';
-                li.textContent = 'No "P-B" members online right now. Join the action!';
+                li.textContent = 'No "P-B |" members online right now. Join the action or check later!';
                 discordListElement.appendChild(li);
                 return;
             }
             members.forEach(member => {
                 const li = document.createElement('li');
-                li.className = 'pb-member'; // Highlight all as P-B
+                li.className = 'pb-member';
                 li.innerHTML = `<strong>${member.name}</strong> ${member.isOnline ? '🟢' : '🔴 Offline'}`;
                 discordListElement.appendChild(li);
             });
