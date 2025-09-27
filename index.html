@@ -867,9 +867,19 @@
     </script>
     <script>
         // P-B Discord Members Fetcher
+        console.log('[Discord] Script loaded'); // Confirm script is running
         const discordServerId = '1206571308456878100'; // From your widget ID
         const discordEndpoint = `https://lurkr.io/api/v1/getmembers/${discordServerId}`;
-        const discordListElement = document.getElementById("pb-discord-list");
+        let discordListElement = document.getElementById("pb-discord-list");
+        if (!discordListElement) {
+            console.error('[Discord] Error: pb-discord-list element not found in DOM');
+            discordListElement = document.createElement('ul');
+            discordListElement.id = 'pb-discord-list';
+            document.querySelector('#tab-discord .section').appendChild(discordListElement);
+            console.log('[Discord] Created fallback pb-discord-list element');
+        } else {
+            console.log('[Discord] pb-discord-list element found');
+        }
         const discordRefetchInterval = 60; // seconds
         const maxRetries = 3;
         const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
@@ -877,8 +887,10 @@
 
         async function fetchDiscordMembers(retries = maxRetries) {
             try {
+                console.log('[Discord] Attempting to fetch members, retries left:', retries);
                 if (isFirstDiscordLoad) {
                     discordListElement.innerHTML = '<li class="loading">Loading P-B Members...</li>';
+                    console.log('[Discord] Set initial loading state');
                 }
                 const response = await fetch(discordEndpoint, {
                     method: 'GET',
@@ -932,6 +944,7 @@
                 li.className = 'error';
                 li.textContent = 'No "P-B |" members online right now. Ensure tags are set or check later!';
                 discordListElement.appendChild(li);
+                console.log('[Discord] No P-B | members found');
                 return;
             }
             members.forEach(member => {
@@ -940,9 +953,11 @@
                 li.innerHTML = `<strong>${member.name}</strong> ${member.isOnline ? '🟢' : '🔴 Offline'}`;
                 discordListElement.appendChild(li);
             });
+            console.log('[Discord] Displayed', members.length, 'P-B | members');
         }
 
         async function startDiscordFetchingLoop() {
+            console.log('[Discord] Starting fetch loop');
             await fetchDiscordMembers();
             isFirstDiscordLoad = false;
             setTimeout(startDiscordFetchingLoop, discordRefetchInterval * 1000);
@@ -950,6 +965,7 @@
 
         // Start on load
         document.addEventListener("DOMContentLoaded", () => {
+            console.log('[Discord] DOM fully loaded, initializing fetch');
             startDiscordFetchingLoop();
         });
     </script>
